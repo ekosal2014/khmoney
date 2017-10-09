@@ -189,7 +189,7 @@ function confrimCheck(){
 	var time,decrement=0,rate,total_money,total_rate,day;
 	if ($('#popup_total_money').val() == '')
 	{
-		alert("Please Input Total Money");
+		alert("សូមបញ្ជូលចំនួនទឹកប្រាក់ដែលត្រូវខ្ចី");
 		return;
 	}
 	if ($('#type_payment').val() == ''){
