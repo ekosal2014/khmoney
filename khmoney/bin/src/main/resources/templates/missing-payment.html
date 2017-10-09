@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<title>E-Fashion</title>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="No-Cache">
+<meta http-equiv="Pragma" content="No-Cache">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/content.css">
+
+</head>
+
+<body class="lnb_bg">
+
+<div class="wrap">
+
+	<!-- header -->
+	<div class="header">
+		<div class="f_left cboth">
+			<h1 class="logo"><a href="javascript:"><img src="../img/logo/logo_web.png" alt="LAON"></a></h1>
+		</div>
+	</div>
+	<!-- //header -->
+
+	<!-- Container -->
+	<div class="container">
+
+		<!-- content wrap -->
+		<div class="content">
+			<div class="cnt_wrap">
+
+				<!-- title_wrap -->
+				<div class="tit_wrap cboth">
+					<div class="f_left">
+						<div class="tit_h3">
+							<ul>
+								<li><a th:href="@{/}">ទំព័រដើម</a></li>
+								<!--<li><a href="javascript:">បញ្ចីអ្នកខ្ចី</a></li>
+								<li><a href="javascript:">បញ្ចីកម្ចី</a></li>
+								<li><a href="javascript:">បញ្ចីអ្នកខកខានបង់ប្រាក់</a></li>
+								<li><a href="javascript:">កំណត់គោលការណ៍</a></li>-->
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- //title_wrap -->
+				
+				<!-- title_wrap -->
+				<div class="tit_wrap cboth">
+					<div class="t_center">
+						<div class="tit_h3"><h3>បញ្ចីអ្នកខ្ចីប្រាក់</h3></div>
+					</div>
+					<div class="f_right">
+						<div class="srch_wrap">
+							<div class="srch_box">
+								<input type="text" value="" id="txt_search" placeholder="បញ្ចូល លេខកូដ ឬ ឈ្មោះអ្នកខ្ចី" style="width:193px;">
+								<a href="javascript:" class="btn_srch" id="btn_search"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //title_wrap -->
+
+				<!-- table_list -->
+				<div class="tbl_lst1 mgt5" id="missingPayment">
+					<table summary="">
+						<caption></caption>
+						<colgroup>
+						<col style="width:60px;">
+						<col style="width:60px;">
+						<col style="width:150px;">
+						<col>
+						<col style="width:250px;">
+						<col style="width:250px;">
+						<col style="width:120px;">
+						<col style="width:200px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th><div class="t_center"><input type="checkbox"></div></th>
+								<th><div class="t_center">ល.រ</div></th>
+								<th><div class="t_center">លេខកូដកម្ចី</div></th>
+								<th><div class="t_center">ឈ្មោះអ្នកខ្ចី</div></th>
+								<th><div class="t_center">ចំនួនទឹកប្រាក់ត្រូវបង់</div></th>
+								<th><div class="t_center">ថ្ងៃត្រូវបង់ប្រាក់</div></th>
+								<th><div class="t_center">ចំនួនថ្ងៃលើស</div></th>
+								<th><div class="t_center">ដំណើរការ</div></th>
+							</tr>
+						</thead>
+						<tfoot style="display:none;">
+							<tr><td colspan="8"><div class="t_center">ពុំទាន់មានទិន្នន័យនៅឡើយទេ</div></td></tr>
+						</tfoot>
+						<tbody style="display:;">
+							<!-- <tr>
+								<td><div><input type="checkbox"></div></td>
+								<td><div>1</div></td>
+								<td><div>LK-000-001</div></td>
+								<td><div>អេ កុសល</div></td>
+								<td><div>ប្រុស</div></td>
+								<td><div>010-019-234</div></td>
+								<td><div>123-234-456</div></td>
+								<td><div>សង់ប្រាក់</div></td>
+							</tr>
+							<tr>
+								<td><div><input type="checkbox"></div></td>
+								<td><div>2</div></td>
+								<td><div>LK-000-001</div></td>
+								<td><div>អេ កុសល</div></td>
+								<td><div>ប្រុស</div></td>
+								<td><div>010-019-234</div></td>
+								<td><div>123-234-456</div></td>
+								<td><div class="dis">ខ្ចីម្ដងទៀត</div></td>
+							</tr> -->
+							
+						</tbody>
+					</table>
+				</div>
+				<!-- //table_list -->
+
+				
+			</div>
+		</div>
+		<!-- //content wrap -->
+	</div>
+	<!-- //Container -->
+	
+	<!-- footer -->
+	<div class="footer" style="display:none;">
+		<!-- Copy right -->
+		<div class="copyright_wrap">
+			<div class="copyright_box">
+				<p><strong>E-Fashion</strong> Cambodia © 2017 Online Store. All Rights Reserved.</p>
+			</div>
+		</div>
+		<!-- //Copy right -->
+	</div>
+	<!-- //footer -->
+
+	
+</div>
+
+
+<script src="../js/lib/jquery-1.8.3.min.js"></script>
+	<script src="../js/lib/autoNumeric.min.js"></script>
+	<script src="../js/lib/jquery.bpopup.min.js"></script>
+	<script src="../js/lib/jquery-ui.min.js"></script>
+	<script src="../js/lib/moment.min.js"></script>
+	<script src="../js/common/Common.js"></script>
+	<script src="../js/missingPayment.js"></script>
+
+<!-- //popup form -->
+<!-- loading.... -->
+<div style="display:none;" id="loading">
+    <img src="../img/loading.gif" alt="LAON" height="50" width="50">
+</div>
+</body>
+</html>

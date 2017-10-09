@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<title>E-Fashion</title>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="No-Cache">
+<meta http-equiv="Pragma" content="No-Cache">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/content.css">
+
+</head>
+
+<body class="lnb_bg">
+
+<div class="wrap">
+
+	<!-- header -->
+	<div class="header">
+		<div class="t_center">
+			<h1 class="t_center"><img src="#" alt="LAON"></h1>
+		</div>
+	</div>
+	<!-- //header -->
+
+	
+	<form th:action="@{/login}" th:method="POST" id="frm-login">
+	<!-- content wrap -->
+	<div class="content">
+		<div class="cnt_wrap">
+			<div class="login_form">
+				<fieldset>
+					<legend>LOGIN</legend>
+					<ul>
+						<li>
+							<label>ឈ្មោះអ្នកប្រើប្រាស់</label>
+							<input type="text" name="username" placeholder="បញ្ចូលឈ្មោះអ្នកប្រើប្រាស់" required="required">
+						</li>
+						<li>
+							<label>លេខសម្ងាត់អ្នកប្រើប្រាស់</label>
+							<input type="password" name="password" placeholder="បញ្ចូលលេខសម្ងាត់" required="required">
+						</li>
+						<!-- <li class="t_right"><a href="#none" class="btn_forget">ភ្លេចលេខសម្ងាត់?</a></li> -->
+						<li class="">
+							<a href="javascript:" class="btn_login" id="btnLogin">ចូលប្រើ</a>&nbsp;&nbsp;
+							<!-- <a href="javascript:" class="btn_cancel">ចាកចេញ</a> -->
+						</li>
+					</ul>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+	<!-- //content wrap -->
+	</form>
+	<!-- footer -->
+	<div class="footer">
+		<!-- Copy right -->
+		<div class="copyright_wrap">
+			<div class="copyright_box">
+				<p><strong>E-Fashion</strong> Cambodia © 2017 Online Store. All Rights Reserved.</p>
+			</div>
+		</div>
+		<!-- //Copy right -->
+	</div>
+	<!-- //footer -->
+
+	
+</div>
+
+
+
+<!-- alert comfirm -->
+<div class="alert_wrap" style="display:none;">
+	<div class="alert_inner">
+		<div class="alert_tit">
+			<h1>ពត័មាន</h1>
+		</div>
+		<div class="aler_cnt">
+			<p>ប្រតិបត្តិការរក្សាទុកទទួលបានជោគជ័យ</p>
+		</div>
+		<div class="t_line">
+			<a href="#none" class="btn_confirm">យល់ព្រម</a>
+		</div>
+	</div>	
+</div>
+	<script src="../js/lib/jquery-1.8.3.min.js"></script>
+	<script src="../js/lib/function.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#btnLogin').click(function(){
+				$('#frm-login').submit();
+			});
+			$('#frm-login').submit(function(e) {
+				var frm = $('#frm-login');
+				e.preventDefault();
+				var data = {};
+
+				$.each(this,function(i,v){
+					var input = $(v);
+					data[input.attr("name")] = input.val();
+					delete(data["undefined"])
+				});
+				
+		        $.ajax({
+		            type: frm.attr('method'),
+		            url: frm.attr('action'),
+		            data : data,
+		            success : function(json){
+		            	if (json == 'Bad credentials'){
+		            		alert("User Name Or Password is not match!");
+		            	}else if (json == ''){
+		            		alter("User Desible")
+		            	}else{
+		            		window.location.href = json;
+		            	}
+		            	           	
+		            },
+		            error : function(){
+		               console.log('error');
+		            }
+		        });
+		        
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,427 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/* left_navigation_bar */
+.lnb_bg{/*background:url(../img/bg/body_lnb_bg.gif) repeat-y 0 0;*/}
+
+/* grid */
+.grid{border:1px solid #ccc;}
+
+/* wrap */
+.wrap{margin:0;padding:0;min-width:1280px;}
+
+/* header */
+.header{display:block;margin:0;padding:7px 0;height:25px;border-bottom:2px solid #0C51F4;/*background-color:#0C51F4;*/}
+.header .logo{float:left;display:inline-block;vertical-align:top;padding:0 0 0 15px;}
+.header .logo img{display:block;height:45px;}
+
+/* container */
+.container{clear:both;/*padding:0 0 0 210px;*/}
+.content{/*float:left;*/display:block;width:100%;margin:0;padding:0;}
+.cnt_wrap{display:block;margin:0;padding:0 25px 25px;}
+
+/* lnb_box */
+.lnb_box{float:left;width:210px;min-height:700px;/*background:#3c434e;*/overflow:hidden;margin:0 0 0 -210px;}
+
+/* lnb_top */
+.lnb_top{display:block;padding-bottom:5px;position:relative;/*background:#3c434e;*/z-index:1000;}
+.user_view{position:relative;display:block;min-height:46px;margin:0;padding:14px 15px 10px 15px;/*background:#3c434e;*/}
+.user_view .img_user{float:left;width:50px;height:50px;display:inline-block;border:1px solid #292f39;}
+.user_view .user_r_side{float:left;}
+.user_view .user_r_side a.btn_setting{position:relative;display:inline-block;width:15px;height:15px;margin-left:10px;background-image:url(../img/icon/settings.png);background-repeat:no-repeat;background-position:50%;background-size:15px auto;vertical-align:middle;}
+.user_view .user_r_side span.tooltip{position:absolute;top:13px;right:0;width:15px;height:15px;background-image:url(../img/icon/ico_tooltip.png);background-repeat:no-repeat;background-position:0 0;z-index:999;}
+.user_view .user_r_side .icon_user{display:block;font-size:18px;color:#000;padding:13px 0 4px 25px;background:url(../img/icon/icon_user.png) no-repeat 0 13px;}
+.user_view .user_r_side .user_company{display:block;margin:3px 0 0;padding:4px 0 0 5px;color:#c6cbd4;height:13px;}
+.user_view .user_r_side .setting_lay{position:absolute;top:55px;right:0;width:100%;background-color:#3598db;}
+.user_view .user_r_side .setting_lay ul{display:block;padding:15px 0;}
+.user_view .user_r_side .setting_lay li a{display:block;padding:5px 15px;font-size:12px;color:#fff;}
+.user_view .user_r_side .setting_lay li:hover a{text-decoration:underline;}
+
+/* select combo box */
+.select_com{position:relative;}
+.select_com div.combo{position:relative;height:21px;}
+.select_com div.combo span{display:inline-block;line-height:19px;height:19px;padding:2px 5px 0 5px;border:1px solid #292f39;background:#4c5663;color:#c6cbd4;width:146px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;vertical-align:top;}
+.select_com div.combo a{display:inline-block;vertical-align:top;}
+.select_com div.combo img{vertical-align:top;display:inline-block;}
+.select_com ul{position:absolute;top:23px;left:0;width:178px;border:1px solid #292f39;border-top:none;background:#5d6876;}
+.select_com li a{display:block;line-height:21px;height:21px;padding:1px 0 1px 5px;color:#c6cbd4;}
+.select_com li a:hover{background:#C83210;}
+
+
+/* com_group_wrap */
+.com_group_wrap{display:block;}
+.com_group_wrap .com_list{display:block;}
+.com_group_wrap .com_list .com_list_box{display:block;}
+.com_group_wrap .com_list .com_list_box li{border-top:1px solid #eee;}
+.com_group_wrap .com_list .com_list_box li a{position:relative;display:block;padding:7px 10px 7px 30px;font-size:16px;color:#000;}
+.com_group_wrap .com_list .com_list_box li:hover, .com_group_wrap .com_list .com_list_box li.on{border-top:1px solid #3598db;}
+.com_group_wrap .com_list .com_list_box li:hover a, .com_group_wrap .com_list .com_list_box li.on a{color:#fff;background-color:#3598db;}
+.com_group_wrap .com_list .com_list_box li:first-child{border-top:0 !important;}
+.com_group_wrap .com_list .com_list_box li a > span.ordered{font-size:14px;color:#F5060A;}
+
+/* btn_send_wrap */
+.btn_send_wrap{width:195px;margin-top:4px;padding:13px 0 13px 15px;background:#3c434e;border-top:1px solid #454e5b;border-bottom:1px solid #292f39;}
+.btn_send_wrap .btn_send{display:block;width:112px;height:40px;line-height:39px;padding:2px 0 0 76px;background:url(../img/btn/btn_send.png) no-repeat;font-weight:bold;color:#fff;}
+  
+/* group_plus */
+.btn_group_plus{position:relative;display:block;width:118px;height:20px;margin:20px auto 0 auto;padding:9px 0 0 62px;color:#89909d !important;background:url(../img/btn/btn_add_group.gif) no-repeat;}
+.group_plus_wrap{position:relative;height:35px;border-top:1px solid #292f39;border-bottom:1px solid #292f39;background:#313843;}
+.group_plus_wrap .input_box{display:inline-block;margin:7px 0 0 15px;background:#9aa4af;}
+.group_plus_wrap .input_box input[type=text]{width:119px;*width:122px;background:#9aa4af;}
+.group_plus_wrap .btn_edit_bpx{display:block;top:8px;}
+.group_plus_wrap .btn_edit_bpx a.btn_check{display:inline-block;}
+
+/* footer_left_navigation_bar app */
+.ft_cont_app{width:210px;background:#3c434e;border-bottom:1px solid #292e36;}
+.ft_cont_app h3{padding:8px 0 7px 14px;color:#c6cbd4;font-size:12px;border-top:1px solid #292e36;border-bottom:1px solid #292e36;}
+.ft_cont_app ul{clear:both;height:64px;}z
+.ft_cont_app ul li{float:left;text-align:center;width:69px;height:54px;padding:10px 0 0 0;border-left:1px solid #292e36;}
+.ft_cont_app ul li.first{border-left:none;width:70px;}
+.ft_cont_app ul li .txt{margin-top:6px;display:block;text-align:center;font-size:11px;color:#70777e;}
+
+
+/* grid */
+.grid{display:block;margin:0;padding:10px;border:1px solid #b4b4b4;}
+
+.group_name2 li.on{background:#272d38;}
+.com_item li.on .btn_edit_bpx{display:none;}
+.com_item li.on .txt_box a{font-weight:bold;color:#fff;background:url(../img/bul/bul_leftmenu_on.gif) no-repeat 0 4px;}
+
+/* btn_send_wrap */
+.btn_send_wrap{width:195px;margin-top:4px;padding:3px 0 13px 15px;background:#3c434e;border-top:1px solid #454e5b;border-bottom:1px solid #292f39;}
+.btn_send_wrap .btn_send{display:block;width:112px;height:40px;line-height:39px;padding:2px 0 0 76px;background:url(../img/btn/btn_send.png) no-repeat;font-weight:bold;color:#fff;}
+
+/* btn_add_group */
+.btn_add_group{clear:both;width:180px;height:29px;margin:10px auto 0;}
+.btn_add_group a{display:block;height:27px;line-height:27px;padding:2px 0 0 62px;background:url(../img/btn/btn_add_group.png) no-repeat;color:#89909d;}
+
+/* title_wrap */
+.tit_wrap{position:relative;isplay:block;margin:0;padding:0 0 5px 0;border-bottom:1px solid #fff;}
+.tit_wrap .tit_h3 h3{display:inline-block;margin:0;padding:5px 0 2px 17px;font-size:20px;font-family:"Khmer OS Muol","Khmer OS Bokor", "Khmer OS Content", "Khmer OS Battambang", "Khmer OS Siemreap", "Khmer OS System";color:#3598db;line-height:20px;background-image:url(../img/bul/bul_01.png);background-repeat:no-repeat;background-position:0 50%;text-decoration:underline;}
+
+.tit_wrap .tit_h4{border-bottom:1px solid #aaa;}
+.tit_wrap .tit_h4 h4{display:inline-block;margin:0;padding:5px 0 2px 10px;font-size:14px;font-family:"Khmer OS Bokor", "Khmer OS Content", "Khmer OS Battambang", "Khmer OS Siemreap", "Khmer OS System";color:#222;line-height:20px;background-image:url(../img/bul/bul_01_01.png);background-repeat:no-repeat;background-position:0 50%;}
+
+
+.tit_wrap .tit_h3 ul{display:block;overflow:hidden;padding-left:0;}
+.tit_wrap .tit_h3 ul li{float:left;padding-left:33px;background-image:url(../img/icon/ico_arrow1.png);background-repeat:no-repeat;background-position:0 5px;background-size:37px 25px;}
+.tit_wrap .tit_h3 ul li:first-child{padding-left:0;}
+.tit_wrap .tit_h3 a{display:block;padding:5px 0 2px 0;font-size:12px !important;font-family:"Khmer OS Bokor", "Khmer OS Content", "Khmer OS Battambang", "Khmer OS Siemreap", "Khmer OS System";color:#0C51F4 !important;line-height:20px;text-decoration:underline;font-weight:normal !important;}
+.tit_wrap .tit_h3 a:hover{color:#2E4B6A !important;}
+
+.tit_wrap .tit_h3 span.ordered{color:#F81115;}
+.tit_wrap .tit_h3 > span{margin-left:5px;font-size:12px;color:#666;font-weight:normal;}
+.tit_wrap .tit_h3 > a{margin:0 0 0 4px;font-size:12px;color:#4c73b4;font-weight:normal;text-decoration:underline;}
+.tit_wrap .btn_delete{display:inline-block;padding:0 15px;font-size:14px;color:#fff !important;line-height:27px;text-align:center;border-radius:2px;background-color:#3598db;}
+.tit_wrap .btn_delete:hover{background-color:#197DC0;}
+
+
+.tit_wrap .right_box{position:absolute;top:0;right:0;}
+a.btn_addnew, a.btn_save{display:inline-block;min-width:50px;height:25px;padding:0 10px;font-family:"Khmer OS Battambang","Khmer OS Bokor", "Khmer OS Content", "Khmer OS Siemreap", "Khmer OS System";color:#fff;background-image:url(../img/icon/btn_addnew_over.png);background-repeat:no-repeat;background-position:50% 2px;background-size:18px auto;background-color:#69A8FD;text-align:center;border-radius:3px;}
+a.btn_addnew:hover{background-image:url(../img/icon/btn_addnew_over.png);}
+a.btn_addnew:hover, a.btn_save:hover{color:#fff;background-color:#0070c0;}
+a.btn_save{background-image:none;}
+
+/* pop_tab */
+.pop_tab{display:block;height:30px;margin:0;padding:0;border-bottom:1px solid #00a391;}
+.pop_tab ul{overflow:hidden;}
+.pop_tab ul li{float:left;display:inline-block;vertical-align:top;}
+.pop_tab ul li > a{display:block;height:27px;margin:0;padding:3px 15px 0;font-size:12px;color:#666;line-height:27px;font-weight:bold;background-color:#e5e5e5;}
+.pop_tab ul li.on > a, .pop_tab ul li:hover > a{color:#fff;background-color:#00a391;}
+
+/* //2014-12-15 */
+.sms_alarm{padding:18px 15px 20px;border:1px solid #cfcfcf;line-height:18px;}
+.sms_alarm .p_2{font-size:11px;color:#888;line-height:15px;}
+.input_plus{padding:15px 0 0;border-top:1px solid #ddd;}
+.input_plus a.btn_function{float:right;margin-left:3px;}
+.plus_minus{width:354px;margin:0 auto;}
+.plus_minus li:first-child{margin-top:0;}
+.plus_minus li{clear:both;*zoom:1;height:23px;position:relative;margin:10px 0 0;}
+.plus_minus li:before,.cboth:after{display:table;content:'';}
+.plus_minus li:after{clear:both;}
+.tit_combo{display:inline-block;margin-right:5px;vertical-align:-1px;min-width:60px;}
+
+
+/* search_wrap */
+.srch_wrap{position:relative;float:left;display:inline-block;height:27px;margin:0 4px 0 0;padding:0 0 0 5px;background-image:url(../img/bg/bg_search.png);background-repeat:no-repeat;background-position:0 0;}
+.srch_wrap .srch_box{display:block;height:27px;margin:0;padding:0 28px 0 0;background-image:url(../img/bg/bg_search.png);background-repeat:no-repeat;background-position:100% 0;overflow:hidden;}
+.srch_wrap .srch_box > a.btn_srch{position:absolute;top:0;right:-5px;display:block;width:28px;height:27px;background-image:url(../img/btn/btn_srch.png);background-repeat:no-repeat;background-position:50% 50%;}
+.srch_wrap .srch_box input{display:block;height:25px;margin:1px 0 0;padding:0;border:0;outline:0;font-family:"Khmer OS Battambang","Khmer OS Bokor", "Khmer OS Content", "Khmer OS Siemreap", "Khmer OS System";font-size:12px;line-height:13px;}
+
+/* pop_wrap */
+.pop_wrap{display:block;margin:0;padding:0 0 20px;}
+
+/* pop_header */
+.pop_header{display:block;height:41px;margin:0;padding:0;border:1px solid #3c434e;background-color:#4c5663;overflow:hidden;}
+.pop_header .pop_tit_h3{display:block;margin:9px 0 0 18px;padding:5px 0 2px;font-size:14px;color:#fff;line-height:15px;}
+
+/* pop_content */
+.pop_cnt{display:block;margin:0;padding:20px;border-top:0;border:1px solid #e1e1e1;}
+
+/* pop_banner */
+.pop_banner{position:relative;display:block;margin:0;padding:0;}
+.pop_banner > img{display:block;width:100%;}
+.pop_banner .btn_click{position:absolute;top:59px;right:13px;display:block;width:69px;height:18px;}
+
+/* pop_title */
+.pop_title{display:block;margin:0;padding:0;overflow:hidden;}
+.pop_title > h3{float:left;display:block;margin:0;padding:5px 0 3px 14px;font-size:12px;color:#666;line-height:13px;background-image:url(../img/comm/play.png);background-repeat:no-repeat;background-position:0 50%;}
+.pop_title > a{display:inline-block;vertical-align:top;margin-top:2px;}
+
+/* table_list */
+.tbl_lst{display:block;margin:0;padding:0;border-top:1px solid #b4b4b4;border-bottom:1px solid #b4b4b4;}
+.tbl_lst tr th{text-align:left;background-color:#f0f1f3;}
+.tbl_lst tr:first-child th, .tbl_lst tr:first-child td{border-top:0;}
+.tbl_lst tr th, .tbl_lst tr td{border-top:1px solid #ddd;}
+.tbl_lst tr th > div, .tbl_lst tr td > div{display:block;height:23px;margin:0;padding:6px 0 6px 9px;font-size:12px;color:#333;line-height:26px;}
+.tbl_lst tr td > div select{display:inline-block;vertical-align:top;height:23px;}
+.tbl_lst tr td > div input{display:inline-block;vertical-align:top;height:21px;}
+.txt_bul{display:inline-block;vertical-align:top;background-image:url(../img/bul/bul_02.png);background-repeat:no-repeat;background-position:0 0;}
+
+
+/* table_list(style1) */
+.tbl_lst1{display:block;border-top:2px solid #2E4B6A;border-bottom:2px solid #3598db;}
+.tbl_lst1 tr th{border-bottom:2px solid #2E4B6A;background-color:#2E4B6A;}
+.tbl_lst1 tr th > div{display:block;/*height:15px;*/padding:6px 8px 6px;font-family:"Khmer OS Battambang","Khmer OS Bokor", "Khmer OS Content", "Khmer OS Siemreap", "Khmer OS System";font-size:12px;color:#fff;line-height:18px;text-align:left;}
+.tbl_lst1 tr:first-child td{border-top:0;}/* 20170720 */
+.tbl_lst1 tr td{position:relative;border-top:1px solid #ccc;}
+.tbl_lst1 tr td > div{position:relative;display:block;/*height:15px;*/padding:6px 10px 6px;font-family:"Khmer OS Battambang","Khmer OS Bokor", "Khmer OS Content", "Khmer OS Siemreap", "Khmer OS System";font-size:12px;color:#222;line-height:18px;text-align:left;}/* 20170720 */
+.tbl_lst1 tr td > div .text{display:block;min-width:150px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
+.tbl_lst1 tr th > div input, .tbl_lst1 tr td > div input{display:inline-block;vertical-align:top;margin:-2px 0 0;font-size:14px;line-height:13px;}
+.tbl_lst1 tr td select{min-width:200px;height:25px;padding:0 0 0 6px;}
+.tbl_lst1 tr td p.space{display:block;margin-top:5px;}
+
+.tbl_lst1 tr td a{display:inline-block;width:24px;height:24px;margin:-4px 0 0 5px;vertical-align:top;background-repeat:no-repeat;background-position:50% 50%;background-size:15px auto;}/* 20170720 */
+.tbl_lst1 tr td a.btn_edit_img{margin-right:5px;background-image:url(../img/icon/btn_edit_img.png);} /* 20170720 */
+.tbl_lst1 tr td a.btn_edit{margin-left:0;background-image:url(../img/icon/btn_edit.png);}
+.tbl_lst1 tr td a.btn_delete{background-image:url(../img/icon/btn_delete.png);}
+.tbl_lst1 tr td a.btn_edit_img:hover{background-image:url(../img/icon/btn_edit_img_on.png);}/* 20170720 */
+.tbl_lst1 tr td a.btn_edit:hover{background-image:url(../img/icon/btn_edit_on.png);}
+.tbl_lst1 tr td a.btn_delete:hover{background-image:url(../img/icon/btn_delete_on.png);}
+.tbl_lst1 tr:hover td{background-color:#efefef;}
+.tbl_lst1 tr th input[type=checkbox], .tbl_lst1 tr td input[type=checkbox]{cursor:pointer;vertical-align:middle;}
+
+.tbl_lst1 tfoot tr:hover td{background-color:transparent;}
+.tbl_lst1 tfoot tr td div{color:#8F8888;}
+
+.tbl_lst1.tbl_ipt tr td > div{/*height:19px;*/}/* 20170720 */
+.tbl_lst1.tbl_ipt tr td > div input{margin-top:0;}
+.tbl_lst1.tbl_ipt tr:hover td{background-color:transparent;}
+
+/* table_list(style2) */
+.tbl_lst2{display:block;margin:0;padding:0;border-top:2px solid #f5b876;border-bottom:1px solid #d5d5d5;}
+.tbl_lst2 tr th{background-color:#faf8ed;}
+.tbl_lst2 tr th, .tbl_lst2 tr td{border-top:1px solid #d5d5d5;vertical-align:middle;}
+.tbl_lst2 tr th > div{display:block;margin:0;padding:6px 10px 4px;font-size:12px;color:#333;line-height:13px;}
+.tbl_lst2 tr td > div{display:block;vertical-align:top;margin:0;padding:4px 10px 3px;font-size:12px;color:#555;line-height:16px;}
+.tbl_lst2 tr td > div.no_data{text-align:center;}
+.tbl_desc{display:block;margin:0;padding:5px 0 3px 9px;font-size:12px;color:#595959;line-height:13px;background:url(../img/bul/bul_03.png) no-repeat 0 50%;}
+
+/* table_search */
+.tbl_srch{display:block;margin:0;padding:7px 0;border-bottom:1px solid #ccc;background-color:#f4f4f4;}
+.tbl_srch tr th > div{display:block;height:31px;margin:0;padding:0 0 0 15px;font-size:12px;color:#555;line-height:32px;text-align:left;}
+.tbl_srch tr td > div{display:block;height:31px;margin:0;padding:0 0 0 10px;vertical-align:middle;}
+.tbl_srch tr td > div > input{display:inline-block;vertical-align:top;margin-top:3px;}
+.tbl_srch tr td > div > a{display:inline-block;vertical-align:top;margin:5px 0 0;}
+.tbl_srch tr td > div label{float:left;display:inline-block;vertical-align:top;height:22px;margin:3px 15px 0 0;}
+.tbl_srch tr td > div label input{display:inline-block;vertical-align:top;margin:5px 5px 0 0;}
+.tbl_srch tr td > div label span{display:inline-block;vertical-align:top;margin-top:7px !important;font-size:12px;color:#555;line-height:12px;}
+.tbl_srch tr td > div .btn_srch{margin:0;}
+
+
+/* footer */
+.footer{width:100%;position:fixed;bottom:0;left:0;z-index:99999;background-color: white;}
+
+/* copy right */
+.copyright_wrap{width:100%;min-width:600px;height:22px;padding:8px 0 0 0;border-top:1px solid #0C51F4;position:relative;clear:both;}
+.copyright_box{width:100%;color:#999;font-size:11px;text-align:;}
+.copyright_box p:first-child{font-size:11px;color:#333;padding-left:10px;text-align:center;}
+.ft_menu{float:right;width:40%;padding-right:10px;text-align:right;}
+.ft_menu span{padding:0 7px 0 10px;border-left:1px solid #fff;display:inline-block;height:10px;}
+.ft_menu span:first-child{border-left:0;padding-left:0;}
+.ft_menu span a{font-size:11px;color:#fff;height:11px;margin-top:-1px;}
+
+/* button_wrap */
+.btn_wrap{display:block;margin:0;padding:0;}
+.btn_style, .btn_style > span{display:inline-block;*display:inline;*zoom:1;vertical-align:top;margin:0;background-image:url(../img/btn/btn_sprite.png);background-repeat:no-repeat;background-position:0 0;}
+
+.btn_w_down{height:27px;padding:0 24px 0 0;background-position:100% -58px;}
+.btn_w_down > span{height:24px;padding:3px 0 0 9px;font-size:12px;color:#555;line-height:24px;font-weight:bold;background-position:0 -58px;}
+.btn_w_down.on{background-position:100% -87px;}
+.btn_w_down.on > span{background-position:0 -87px;}
+
+.btn_wg{height:27px;padding:0 9px 0 0;background-position:100% -29px;}
+.btn_wg > span{height:24px;padding:3px 0 0 26px;font-size:12px;color:#fff;line-height:24px;background-position:0 -29px;}
+
+.btn_w{height:27px;padding:0 9px 0 0;background-position:100% 0;}
+.btn_w > span{height:24px;padding:3px 0 0 9px;font-size:12px;color:#555;line-height:24px;font-weight:bold;background-position:0 0;}
+
+.btn_combo_down{height:25px;padding:0 25px 0 0;background-position:100% -116px;}
+.btn_combo_down > span{height:22px;padding:3px 0 0;min-width:40px;font-size:12px;color:#555;line-height:22px;text-align:center;background-position:0 -116px;}
+
+.btn_b{height:29px;padding:0 9px 0 0;background-position:100% -143px;}
+.btn_b > span{height:26px;padding:3px 0 0 9px;font-size:12px;color:#fff;line-height:26px;font-weight:bold;background-position:0 -143px;}
+
+/* button_search(height:29px) */
+.btn_layer{position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:top;}
+.btn_layer ul{position:absolute;top:27px;right:0;display:block;width:124px;border:1px solid #424953;background-color:#fff;overflow:hidden;}
+.btn_layer ul li:first-child{border-top:0;}
+.btn_layer ul li{float:left;display:inline-block;width:100%;vertical-align:top;border-top:1px solid #e8e8e8;}
+.btn_layer ul li > a{display:block;height:22px;margin:0;padding:3px 0 0 15px;font-size:12px;color:#555;line-height:22px;text-align:left;background:url(../img/bul/bul_04.png) no-repeat 8px 50%;}
+.btn_layer ul li > a:hover{background-color:#ebebeb;}
+
+.btn_srch{height:29px;padding:0 9px 0 0;background-position:100% -174px;}
+.btn_srch > span{height:26px;padding:3px 0 0 27px;font-size:12px;color:#555;line-height:26px;font-weight:bold;background-position:0 -174px;}
+
+
+/* paging */
+.paging_wrap{position:relative;clear:both;margin-top:15px;z-index:111;/*height:70px;*/}
+.content_wrap .paging_wrap{margin-bottom:15px;}
+.paging_wrap .combo_wrap{position:absolute;top:0;left:0;}
+.paging{text-align:center;}
+.paging .btn_pag_cntr{width:23px;height:23px;display:inline-block;border:1px solid #bfc4c8;}
+.paging .pag_num{display:inline-block;margin:0 11px;vertical-align:top;height:25px;overflow:hidden;}
+.paging .pag_num a{display:inline-block;height:23px;line-height:23px;padding:2px 7px 0;*padding:1px 7px 1px;font-weight:bold;color:#2d2f35;text-align:center;}
+.paging .pag_num a.on{color:#f44949;text-decoration:underline;}
+.paging .btn_pag_cntr.first{cursor:default;border-right:none;background:url(../img/icon/ico_first.png) no-repeat;}
+.paging .btn_pag_cntr.prev{cursor:default;background:url(../img/icon/ico_prev.png) no-repeat;}
+.paging .btn_pag_cntr.next{cursor:default;border-right:none;background:url(../img/icon/ico_next.png) no-repeat;}
+.paging .btn_pag_cntr.last{cursor:default;background:url(../img/icon/ico_last.png) no-repeat;}
+.paging .btn_pag_cntr.on{cursor:pointer;border:1px solid #b4b4b4;}
+.paging .btn_pag_cntr.first.on{cursor:pointer;border-right:none;background:url(../img/icon/ico_first_on.png) no-repeat;}
+.paging .btn_pag_cntr.prev.on{cursor:pointer;background:url(../img/icon/ico_prev_on.png) no-repeat;}
+.paging .btn_pag_cntr.next.on{cursor:pointer;border-right:none;background:url(../img/icon/ico_next_on.png) no-repeat;}
+.paging .btn_pag_cntr.last.on{cursor:pointer;background:url(../img/icon/ico_last_on.png) no-repeat;}
+.combo_style ul{position:absolute;top:24px;left:0;width:62px;border:1px solid #3c434e;background:#fff;overflow:hidden;}
+.combo_style ul li{height:23px;}
+.combo_style ul li a{display:block;height:21px;line-height:21px;padding:2px 0 0 8px;*padding:1px 0 1px 8px;color:#555;}
+.combo_style ul li a:hover{background:#ebebeb;}
+
+/* alert_wrap */
+.alert_wrap, .alert_wrap.frm{position:fixed;top:0;left:0;display:block;width:100%;height:100%;margin:0;padding:0;background-image:url(../img/bg/bg_alert.png);background-repeat:repeat;background-position:0 0;z-index:9999;}
+.alert_wrap .alert_inner, .alert_wrap.frm .alert_inner{position:absolute;top:50%;left:50%;display:block;width:450px;min-height:70px;padding-bottom:20px;margin:-150px 0 0 -200px;background-color:#fff;border-radius:10px;text-align:center;}
+.alert_wrap .alert_inner .alert_tit, .alert_wrap.frm .alert_inner .alert_tit{position:relative;border-top-left-radius:8px;border-top-right-radius:8px;background-color:#203864;}
+.alert_wrap .alert_inner h1, .alert_wrap.frm .alert_inner h1{padding:7px 35px;font-family:"Khmer OS Battambang","Khmer OS Bokor", "Khmer OS Content", "Khmer OS Siemreap", "Khmer OS System";font-size:18px;color:#fff;text-align:left;background-image:url(../img/icon/ico_alert.png);background-repeat:no-repeat;background-position:10px 13px;background-size:20px auto;}
+.alert_wrap .aler_cnt, .alert_wrap.frm .aler_cnt{display:block;min-height:100px;padding:20px;background-color:#fff;}
+.aler_cnt p{padding:3px 35px;font-family:"Khmer OS Battambang","Khmer OS Bokor", "Khmer OS Content", "Khmer OS Siemreap", "Khmer OS System";font-size:14px;color:#333;line-height:25px;text-align:left;background-image:url(../img/icon/ico_alert_sms.png);background-repeat:no-repeat;background-position:0 0;background-size:30px auto;}
+.alert_inner a.btn_confirm, .alert_inner a.btn_cancel{display:inline-block;margin-left:10px;padding:0 20px;font-family:"Khmer OS Battambang","Khmer OS Bokor", "Khmer OS Content", "Khmer OS Siemreap", "Khmer OS System";font-size:14px;color:#fff;line-height:30px;background-color:#4284F9;border-radius:3px;}
+.alert_inner a.btn_cancel{background-color:#999;}
+.alert_inner a.btn_cancel:hover{background-color:#666;}
+.alert_inner a.btn_confirm:hover{background-color:#0D56D7;}
+
+
+a.btn_close{position:absolute;top:8px;right:5px;display:block;width:30px;height:30px;padding:0;background-image:url(../img/icon/btn_close.png);background-repeat:no-repeat;background-position:50%;background-size:20px auto;background-color:transparent;}
+
+.alert_wrap.frm .alert_inner .alert_tit{background-color:#2e4b6a;}
+.alert_wrap.frm .alert_inner{width:720px;margin:-230px 0 0 -360px;}
+.alert_wrap.frm .aler_cnt{height:250px;}
+
+/* defual form */
+.default_frm{display:block;border:1px solid #3598db;padding-bottom:20px;}
+.default_frm .title_wrap{position:relative;display:block;}
+.default_frm .tit_h1{display:block;margin:0;padding:13px 0 12px 50px;font-size:18px;color:#fff;line-height:20px;font-weight:normal;background-image:url(../img/icon/ico_add.png);background-repeat:no-repeat;background-position:15px 50%;background-color:#3598db}
+.default_frm .btn_cls{position:absolute;top:0;right:0;display:block;width:45px;height:45px;background-color:transparent;background-image:url(../img/icon/ico_close.png);background-repeat:no-repeat;background-position:50% 50%;background-size:20px auto;}
+.default_frm .ipt_wrap{display:block;padding:20px;}
+.default_frm .ipt_wrap th, .default_frm .ipt_wrap td{text-align:left;}
+.default_frm .ipt_wrap th div, .default_frm .ipt_wrap td div{padding:5px 10px;font-size:14px;}
+.default_frm .ipt_wrap input{height:23px;}
+.default_frm .ipt_wrap input, .default_frm .ipt_wrap textarea{padding:2px 7px;font-size:14px;color:#666;line-height:23px;}
+.default_frm a.btn_blue, .default_frm a.btn_red{display:inline-block;min-width:100px;padding:8px 30px;font-size:16px;color:#fff;border-radius:3px;}
+.default_frm a.btn_blue{background-color:#3598db;}
+.default_frm a.btn_red{background-color:#F34444;}
+.default_frm a.btn_blue:hover{background-color:#1d83c8;}
+.default_frm a.btn_red:hover{background-color:#e22323;}
+
+/* style 2 */
+a.btn_blue, a.btn_red{display:inline-block;min-width:60px;height:32px;padding:3px 15px 0;font-size:16px;color:#fff;text-align:center;border-radius:3px;line-height:25px;}
+a.btn_blue{background-color:#3598db;}
+a.btn_red{background-color:#F34444;}
+a.btn_blue:hover{background-color:#1d83c8;}
+a.btn_red:hover{background-color:#e22323;}
+
+.new_ordered{display:block;padding:20px;}
+.new_ordered ul{display:block;}
+.new_ordered ul li{float:left;display:inline-block;width:23%;margin:10px 0 0 10px;background-color:#efefef;border:1px solid #efefef;}
+.new_ordered ul li:hover{border:1px solid #fff;border:1px solid #3598db;}
+.new_ordered ul li a{display:block;padding:0 0 20px;}
+.new_ordered dt{padding:5px 20px;font-size:18px;color:#fff;font-weight:bold;background-color:#3598db;}
+.new_ordered dd{padding:2px 20px;font-size:16px;}
+.new_ordered span.date{display:block;margin-top:15px;padding:2px 20px;font-size:16px;color:#0C80D4;text-align:center;}
+.info_cus{padding:5px 10px 6px 10px;font-size:14px;color:#000;background-color:#ADD7EC;}
+.info_cus strong{color:#000;}
+.info_cus .date{color:#136CB4;}
+
+
+.login_form{position:absolute;left:50%;top:50%;display:block;width:300px;margin:-120px 0 0 -250px; padding:20px 20px 30px 200px;background-color:#0C51F4;background-image:url(../static/img/bg/bg_login.png);background-repeat:no-repeat;background-position:20px 50%;background-size:170px auto;}
+.login_form li{display:block;padding:2px 20px;}
+.login_form li label{display:block;padding:13px 0;font-size:14px;font-family:"Khmer OS Content", "Khmer OS Battambang", "Khmer OS Siemreap", "Khmer OS System";color:#fff;}
+.login_form li input{width:100%;height:25px;font-family:"Khmer OS Content", "Khmer OS Battambang", "Khmer OS Siemreap", "Khmer OS System";line-height:25px;border:1px solid #fff;}
+
+.login_form li a{display:inline-block;font-family:"Khmer OS Content", "Khmer OS Battambang", "Khmer OS Siemreap", "Khmer OS System";color:#fff;line-height:25px;}
+.login_form li a.btn_forget{color:#1AE0E9;}
+.login_form li a.btn_forget:hover{text-decoration:underline;}
+.login_form li a.btn_login, .login_form li a.btn_cancel{min-width:83px;padding:3px 20px;font-size:14px;line-height:25px;border:1px solid;text-align:center;}
+.login_form li a.btn_login:hover, .login_form li a.btn_cancel:hover{border:1px solid #01222E;background-color:#01222E;}
+
+input{outline:0;}
+.dis{color:#AFAFAF !important;}
+.t_line{margin:0 20px;padding-top:10px;border-top:1px solid #666;}
+.t_line1{border-top:1px solid #666;}
+
+.tasks_wrap{display:block;}
+.tasks_wrap .main_menu{position:absolute;top:50%;display:block;width:100%;margin:-100px 0 0 -25px;padding:0;text-align:center;}
+.tasks_wrap .main_menu ul{display:table;margin:0 auto;}
+.tasks_wrap .main_menu ul li{float:left;width:150px;border:2px solid #0C51F4;margin:7px;border-radius:50%;}
+.tasks_wrap .main_menu ul li:hover{border:2px solid #0C51F4;background-color:#0C51F4;}
+.tasks_wrap .main_menu ul li a{display:block;height:150px;font-size:18px;font-family:"Khmer OS Muol","Khmer OS Bokor", "Khmer OS Content", "Khmer OS Battambang", "Khmer OS Siemreap", "Khmer OS System";color:#3598db;line-height:150px;}
+.tasks_wrap .main_menu ul li a > span{display:inline-block;line-height:25px;vertical-align:middle;}
+.tasks_wrap .main_menu ul li:hover a > span{color:#fff;}
+
+.tbl_input_dot{display:block;padding:0 30px;}
+.tbl_input_dot tr th, .tbl_input_dot tr td{text-align:left;vertical-align:middle;} 
+.tbl_input_dot tr th{text-align:right;}
+.tbl_input_dot tr th div, .tbl_input_dot tr td div{padding:3px 7px;font-size:12px;font-family:"Khmer OS Battambang","Khmer OS Bokor", "Khmer OS Content", "Khmer OS Siemreap", "Khmer OS System";color:#222;font-weight:normal;}
+.tbl_input_dot tr td div{padding-right:14px;}
+.tbl_input_dot tr td div input[type=text]{padding:0;height:23px;width:100%;font-family:"Khmer OS Battambang","Khmer OS Bokor", "Khmer OS Content", "Khmer OS Siemreap", "Khmer OS System";color:#222;border:0;background-image:url(../img/bg/bg_b_line.png);background-repeat:repeat-x;background-position:0 100%;background-size:17px auto;}
+
+.tbl_input_dot a.btn_edit1, .tbl_input_dot a.btn_delete_1, .tbl_input_dot a.btn_add_1{display:inline-block;width:20px;height:20px;margin:0 2px;background-color:transparent;}
+.tbl_input_dot a.btn_edit1{width:35px;background-image:url(../img/icon/ico_btn_edit1.png);background-repeat:no-repeat;background-position:-3px -9px;background-size:45px auto;}
+.tbl_input_dot a.btn_delete_1{background-image:url(../img/icon/ico_btn_delete1.png);background-repeat:no-repeat;background-position:0 0;background-size:20px auto;}
+.tbl_input_dot a.btn_add_1{background-image:url(../img/icon/ico_btn_add1.png);background-repeat:no-repeat;background-position:-7px -5px;background-size:35px auto;}
+.tbl_input_dot a.btn_save{background-image:url(../img/icon/Save-as.png);background-repeat:no-repeat;background-position:-7px -5px;background-size:35px auto;}
+
+.tbl_input_dot a.btn_edit1:hover, 
+.tbl_input_dot a.btn_delete_1:hover, 
+.tbl_input_dot a.btn_add_1:hover{background-color:#928F8F;}
+
+.tbl_input_pop{display:block;padding:20px 30px;}
+.tbl_input_pop tr th, .tbl_input_pop tr td{text-align:left;vertical-align:middle;} 
+.tbl_input_pop tr th{text-align:right;}
+.tbl_input_pop tr th div, .tbl_input_pop tr td div{padding:3px 7px;font-size:12px;font-family:"Khmer OS Battambang","Khmer OS Bokor", "Khmer OS Content", "Khmer OS Siemreap", "Khmer OS System";color:#222;font-weight:normal;}
+.tbl_input_pop tr th div{padding-right:5px;}
+.tbl_input_pop tr td div{padding-right:25px;}
+.tbl_input_pop tr td div input[type=text], .tbl_input_pop tr td div select{height:23px;width:100%;font-family:"Khmer OS Battambang","Khmer OS Bokor", "Khmer OS Content", "Khmer OS Siemreap", "Khmer OS System";color:#222;border:1px solid #ccc;}
+
+/* add */
+.point_text{display:block;padding:3px 17px;font-family:"Khmer OS Battambang","Khmer OS Bokor", "Khmer OS Content", "Khmer OS Siemreap", "Khmer OS System";color:#222;background-image:url(../img/icon/ico_point_text.png);background-repeat:no-repeat;background-position:0 5px;background-size:20px auto;}
+
+
+/* ----------------------------------------- add 2017-10-05 ----------------------------------------- */
+/* Tab */
+.tabType01{position:relative;height:31px;margin:10px 0 0;padding:6px 0 0;border-bottom:1px solid #333;z-index:99;}
+.tabType01 a:hover{text-decoration:none;color:#555;}
+.tabType01 ul li{float:left;height:30px;margin:0;border-top:1px solid #ccc;border-right:1px solid #ccc;background-color:#f4f4f4;}
+.tabType01 ul li:first-child{border-left:1px solid #ccc;}
+.tabType01 ul li a{display:block;min-width:57px;padding:0 15px;font-family:"Khmer OS Battambang","Khmer OS Bokor", "Khmer OS Content", "Khmer OS Siemreap", "Khmer OS System";line-height:31px;text-align:center;cursor:pointer;color:#555;}
+.tabType01 ul li a em{font-style:normal;font-weight:normal;color:#f44949;}
+.tabType01 ul li.on *{cursor:default;}
+.tabType01 ul li.on{height:31px;border-top:1px solid #333;border-right:1px solid #333;border-left:1px solid #333;background-color:#fff;}
+.tabType01 ul li.on a{color:#333;font-weight:bold;}
+/* .right_btn */
+.tabType01 .right_btn{position:absolute;top:0;right:0;}
+.tabType01 .input_box{float:right;background-image:url(../img/bg/bg_topsearch.gif);background-repeat:no-repeat;}
+.tabType01 .input_box input[type=text]{display:inline-block;margin:0 5px;border:none;}
+.tabType01 .btn_style1, .tabType01 a.icon, .tabType01 .btn_style1_b, .tabType01 .btn_style4_b{float:left;margin-left:4px;}
+/* //----------------------------------------- add 2017-10-05 ----------------------------------------- */
+
+.payment_already {background-color:#efefef;}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<title>E-Fashion</title>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="No-Cache">
+<meta http-equiv="Pragma" content="No-Cache">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/content.css">
+<script src="../js/jquery-1.8.3.min.js"></script>
+<script src="../js/EFastion_v.2.js"></script>
+</head>
+
+<body class="lnb_bg">
+
+<div class="wrap">
+
+	<!-- header -->
+	<div class="header">
+		<div class="f_left cboth">
+			<h1 class="logo"><a th:href="@{/}"><img src="../img/logo/logo_web.png" alt="LAON"></a></h1>
+		</div>
+	</div>
+	<!-- //header -->
+
+	<!-- Container -->
+	<div class="container">
+
+		<!-- content wrap -->
+		<div class="content">
+			<div class="cnt_wrap">
+				<!-- title_wrap -->
+				<div class="tit_wrap cboth">
+					<div class="f_left">
+						<div class="tit_h3">
+							<ul>
+								<li><a th:href="@{/}">ទំព័រដើម</a></li>
+								<li><a th:href="@{/loaner}">បញ្ចីអ្នកខ្ចី</a></li>
+								<li><a th:href="@{loan}">បញ្ចីកម្ចី</a></li>
+								<li><a th:href="@{/missing-payment}">បញ្ចីអ្នកខកខានបង់ប្រាក់</a></li>
+								<li><a th:href="@{/setting}">កំណត់គោលការណ៍</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- //title_wrap -->
+
+				<div class="tasks_wrap">
+					<!-- title_wrap -->
+					<div class="tit_wrap cboth">
+						<div class="t_center">
+							<div class="tit_h3"><h3>ទំព័រដើម</h3></div>
+						</div>
+					</div>
+					<!-- //title_wrap -->
+
+					<!-- main_menu -->
+					<div class="main_menu">
+						<ul>
+							<li><a th:href="@{/loaner}"><span>បញ្ចីអ្នកខ្ចី</span></a></li>
+							<li><a th:href="@{loan}"><span>បញ្ចីកម្ចី</span></a></li>
+							<li><a th:href="@{/missing-payment}"><span>បញ្ចីអ្នក<br>ខកខាន<br>បង់ប្រាក់</span></a></li>
+							<li><a th:href="@{/setting}"><span>កំណត់<br>គោល<br>ការណ៍</span></a></li>
+						</ul>
+					</div>
+					<!-- //main_menu -->
+				</div>
+			</div>
+		</div>
+		<!-- //content wrap -->
+	</div>
+	<!-- //Container -->
+	
+	<!-- footer -->
+	<div class="footer" style="display:block;">
+		<!-- Copy right -->
+		<div class="copyright_wrap">
+			<div class="copyright_box">
+				<p><strong>E-Fashion</strong> Cambodia © 2017 Online Store. All Rights Reserved.</p>
+			</div>
+		</div>
+		<!-- //Copy right -->
+	</div>
+	<!-- //footer -->
+
+	
+</div>
+
+
+

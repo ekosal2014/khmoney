@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kh.com.loan.mappers.LoanMapper">
+	<select id="loanGetMaxId" resultType="java.lang.Integer">
+		SELECT coalesce(MAX(loan_id),0) AS id 
+		FROM tblloan
+	</select>
+
+	<!-- loading decrement type ...... data  -->
+	<select id="decrementTypeValue" resultType="kh.com.loan.domains.Decrement">
+		SELECT 
+			decrement_id,
+			value,
+			sts,
+			txt
+		FROM tbldecrement_type
+		WHERE sts != '9'
+		ORDER BY value
+	</select>
+	<insert id="insertLoanItem" parameterType="kh.com.loan.domains.Loan" useGeneratedKeys="true"  keyProperty="loan_id">
+	    INSERT INTO tblloan(
+             loaner_id
+           , user_id
+           , start_date
+           , count_day
+           , total_money
+           , rate
+           , type_payment
+           , time
+           , decrement
+           , type_money
+           , sts
+           , txt
+           , modify_date
+           , modify_by
+           , action)
+        VALUES (
+             #{loaner_id}
+           , #{user_id}
+           , #{start_date}
+           , #{count_day}
+           , #{total_money}
+           , #{rate}
+           , #{type_payment}
+           , #{time}
+           , #{decrement}
+           , #{type_money}
+           , #{sts}
+           , #{txt}
+           , #{modify_date}
+           , #{modify_by}
+           , #{action}
+           	);
+	    <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="loan_id">
+	         SELECT CAST(CURRVAL('tblloan_loan_id_seq') as INTEGER) 
+	    </selectKey>
+	</insert>
+	<insert id="insertLoanPayment" parameterType="kh.com.loan.domains.LoanPayment" useGeneratedKeys="true" keyProperty="payment_id">
+			INSERT INTO tblloan_payment(
+		              loan_id
+		            , payment_date
+		            , prak_derm
+		            , total_rate
+		            , total_left
+		            , txt
+		            , modify_date
+		            , modify_by
+		            , action
+		            , note)
+		    VALUES (
+		    		  #{loan_id}
+		    		, #{payment_date}
+		    		, #{prak_derm}
+		    		, #{total_rate}
+		    		, #{total_left}
+		    		, #{txt}
+		    		, #{modify_date}
+		    		, #{modify_by}
+		    		, #{action}
+		    		, #{note}
+		    		);
+	</insert>
+	<select id="loadingLoanById" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+		SELECT 
+			  l.loan_id
+			, l.loaner_id
+			, l.user_id
+			, l.start_date
+			, l.count_day
+			, l.total_money
+			, l.rate
+			, l.type_payment
+			, l."time"
+			, l.decrement
+			, l.type_money
+			, l.sts
+			, l.txt
+			, l.modify_date
+			, l.modify_by
+			, l.action
+			, u.full_name
+		  FROM tblloan l, tbluser u
+		  WHERE 1=1 and l.user_id=u.user_id
+		  <if test="loan_id != null">
+		  		and l.loan_id = cast(#{loan_id} as int)
+		  </if>
+		   <if test="loaner_id != null">
+		  		and l.loaner_id = cast(#{loaner_id} as int)
+		  </if>		  
+		  AND l.sts != '9'
+		  ORDER BY l.loan_id
+	</select>
+	<!-- list Loan -->
+	<select id="loadingLoanView" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+		select 
+		       A.loaner_id
+		     , A.loaner_name
+		     , A.gender
+		     , A.phone
+		     , A.id_card
+		     , A.address
+		     , B.loan_id
+		     , B.start_date
+		     , B.total_money
+		     , B.rate
+		     , B.type_money
+		     , B.time
+		     , B.decrement
+		     , (select C.columns from tblrate_type C where C.type = cast(B.type_payment as int) group by C.columns)  as type_payment
+		     , B.txt
+		     , B.count_day
+		     , B.loan_id
+		     , U.full_name
+		from tblloaner A,tblloan B,tbluser u
+		where A.sts != '9'
+		      AND B.sts != '9'
+		      And B.loan_id = (select min(loan_id) from tblloan WHERE loaner_id = cast(#{loaner_id} as int))
+		      And A.loaner_id = cast(#{loaner_id} as int)
+		      AND u.user_id = B.user_id
+	</select>
+	<!-- loading decrement type ...... data  -->
+	<select id="loadingTypePayment" resultType="kh.com.loan.domains.Setting">
+		SELECT 
+			columns
+			, day
+			, type
+
+		FROM tblrate_type
+		WHERE sts != '9'
+		group by columns,day,type
+	</select>
+	<select id="loadingLoanPayment" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		SELECT  payment_id
+		      , loan_id
+		      , payment_date
+		      , prak_derm
+		      , total_rate
+		      , total_left
+		      , txt
+		      , modify_date
+		      , modify_by
+		      , (select full_name from tbluser u where u.user_id = l.modify_by) as pay_date
+		      , action
+		      , note
+		  FROM tblloan_payment l
+		  WHERE loan_id = cast(#{loan_id} as int)		
+		  order by payment_id
+	</select>
+	<select id="loadingLoanListView" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select 
+			    loan_id
+			  , tl.loaner_id
+			  , start_date
+			  , total_money
+			  , rate
+			  , time
+			  , decrement
+			  , tl.txt
+			  , count_day
+			  , (select max(payment_date) from tblloan_payment lp where lp.loan_id=tl.loan_id) as end_date
+			  , (select (sum(prak_derm)+ sum(total_rate)) from tblloan_payment lp where lp.loan_id=tl.loan_id and lp.txt='9') as amount
+
+		from tblloan tl inner join tblloaner tln on tln.loaner_id=tl.loaner_id
+		where tl.sts != '9'
+ 		<if test="search != null and search != ''">
+			AND ( cast(loan_id as varchar) like '%'|| #{search} ||'%'
+				  or cast(total_money as varchar) like '%'|| #{search} ||'%'  
+				  or tln.loaner_name like '%'|| #{search} ||'%'  
+				)
+		</if> 
+		 <if test="(startDate != null and startDate != '') and (endDate != null and endDate != '')">
+			AND start_date >= #{startDate} AND start_date &lt;= #{endDate}
+		</if> 
+		<if test="typePayment != null and typePayment != ''">
+			AND type_payment = #{typePayment}
+		</if> 
+		order by start_date
+		limit cast(#{perPage} as int) offset cast(#{start} as int)
+	</select>
+	<select id="loadingLoanListViewCount" parameterType="java.util.HashMap" resultType="java.lang.Integer">
+		select 
+			  count(*) as tt
+		from tblloan tl inner join tblloaner tln on tln.loaner_id=tl.loaner_id
+		where tl.sts != '9'
+ 		<if test="search != null and search != ''">
+			AND ( cast(loan_id as varchar) like '%'|| #{search} ||'%'
+				  or cast(total_money as varchar) like '%'|| #{search} ||'%'  
+				  or tln.loaner_name like '%'|| #{search} ||'%'  
+				)
+		</if> 
+		 <if test="(startDate != null and startDate != '') and (endDate != null and endDate != '')">
+			AND start_date >= #{startDate} AND start_date &lt;= #{endDate}
+		</if> 
+		<if test="typePayment != null and typePayment != ''">
+			AND type_payment = #{typePayment}
+		</if> 
+	</select>
+	<select id="loadingLoanViewEdit" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+		select 
+		       A.loaner_id
+		     , A.loaner_name
+		     , A.gender
+		     , A.phone
+		     , A.id_card
+		     , A.address
+		     , B.loan_id
+		     , B.start_date
+		     , B.total_money
+		     , B.rate
+		     , B.type_money
+		     , B.time
+		     , B.decrement
+		     , B.type_payment
+		     , B.txt
+		     , B.count_day
+		     , B.loan_id
+		     , U.full_name
+		     , (select C.columns from tblrate_type C where C.type = cast(B.type_payment as int) group by C.columns)  as type_payment_num
+		from tblloaner A,tblloan B,tbluser u
+		where A.sts != '9'
+		      AND B.sts != '9'
+		      And B.loan_id   = cast(#{loan_id} as int)
+		      And A.loaner_id = cast(#{loaner_id} as int)
+		      AND u.user_id = B.user_id
+	</select>
+	<update id="updateLoanById" parameterType="kh.com.loan.domains.Loan">
+			UPDATE tblloan
+			   SET   
+			   	     user_id=#{user_id}
+			   	   , start_date=#{start_date}
+			   	   , total_money=#{total_money}
+			   	   , rate=#{rate}
+			   	   , type_payment=#{type_payment}
+			   	   , "time"=#{time}
+			   	   , decrement=#{decrement}
+			   	   , type_money=#{type_money}
+			   	   , sts=#{sts}
+			   	   , txt=#{txt}
+			   	   , modify_date=#{modify_date}
+			   	   , modify_by=#{modify_by}
+			   	   , action=#{action}
+			 WHERE loan_id = cast(#{loan_id} as int)
+			 <if test="loaner_id != null or loaner_id = ''">
+			 	 and loaner_id = cast(#{loaner_id} as int)
+			 </if>
+			
+	</update>
+	<delete id="deleteLoanPaymentByLoanId" parameterType="java.lang.Integer">
+	     DELETE FROM tblloan_payment
+		 WHERE loan_id =cast( #{loan_id} as int)	
+	</delete>
+   <select id="loadingLoanViewCheck" parameterType="java.lang.Integer" resultType="kh.com.loan.domains.Loan">
+   		SELECT loan_id, loaner_id, user_id, start_date, total_money, rate, type_payment, 
+		       "time", decrement, type_money, sts, txt, modify_date, modify_by, 
+		       action
+		  FROM tblloan
+		  WHERE loan_id= cast(#{loan_id} as int) and sts != '9'   		
+   </select> 
+	
+	
+	<select id="missingPaymentList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		SELECT 
+		      ln.loaner_id
+		     ,ln.loaner_name
+		     ,ll.loan_id
+		     ,sum(prak_derm + total_rate) as total_money
+		     ,min(payment_date) as payment_date
+		     ,cast(to_char(current_timestamp, 'YYYYMMDD') as int) - cast(min(payment_date) as int) as count_day
+		FROM tblloan_payment lp,tblloan ll, tblloaner ln 
+		WHERE lp.loan_id=ll.loan_id AND ll.loaner_id = ln.loaner_id 
+		AND lp.txt = '1' 
+		AND payment_date &lt;= to_char(current_timestamp, 'YYYYMMDD')
+		AND ll.sts != '9' 
+		AND ln.sts != '9'
+		<if test="search != null || search != ''">
+			AND (cast(ll.loan_id as varchar) = #{search} 
+			     OR ln.loaner_name like '%'|| #{search} || '%')
+		</if>
+		GROUP BY ll.loan_id,ln.loaner_id,ln.loaner_name
+		order by count_day desc
+	</select>
+	
+	<update id="loanPaymentSaveUpdate" parameterType="java.util.HashMap">
+		UPDATE tblloan_payment
+		   SET  txt=#{txt}
+		       , modify_date=#{modify_date}
+		       , modify_by=cast(#{modify_by} as int)
+		       , action=#{action}
+		       , note=#{note}
+		 WHERE payment_id=cast(#{payment_id} as int)
+	</update>
+</mapper>
