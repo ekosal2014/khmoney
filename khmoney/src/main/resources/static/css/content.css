@@ -425,3 +425,8 @@ input{outline:0;}
 /* //----------------------------------------- add 2017-10-05 ----------------------------------------- */
 
 .payment_already {background-color:#efefef;}
+
+/* 20171009 */
+#num_rows{padding:2px 2px;min-width:50px;line-height:25px;border:1px solid #ccc;}
+#num_rows option{font-size:12px;font-family:"Khmer OS Content", "Khmer OS Battambang", "Khmer OS Siemreap", "Khmer OS System";}
+
