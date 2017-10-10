@@ -46,8 +46,8 @@ public class SettingService {
 	
      public Message settingEditById(Map map) throws KHException {
     	
-		Validation.isNumber((String)map.get("value"), "number is not allow String");
-		Validation.isRate((String)map.get("rate"), "Rate is wrong formate!");
+		Validation.isNumber((String)map.get("value"), "អនុញ្ញាតបញ្ចូលតែលេខប៉ុណ្ណោះ");
+		Validation.isRate((String)map.get("rate"), "ការបញ្ជូលការប្រាក់ខុសទំរងសូមផ្ទៀងផ្ទាត់ម្ដងទៀត");
 		Validation.isBlank((String)map.get("id"), "Id is not allow null");
 	    
 		try {
@@ -56,10 +56,10 @@ public class SettingService {
 			setting.setValue(Integer.valueOf(map.get("value").toString().replaceAll("\\P{Print}","")));
 			setting.setRate(Double.valueOf((String)map.get("rate")));
 			
-			if (settingMapper.settingEditById(setting) > 0) {
-				return new Message("0000", "Edit is succefull");
+			if (settingMapper.settingEditById(setting) < 0) {
+				return new Message("9999", "ការកែប្រែរបស់លោកអ្នកទទួលបរាជ័យ");
 			}
-			return new Message("9999", "Edit is fails");
+			return new Message("0000", "ការកែប្រែរបស់លោកអ្នកទទួលជោគជ័យ");
 		}catch( Exception e) {
 			e.printStackTrace();
 			throw new KHException("9999", e.getMessage());
@@ -67,10 +67,10 @@ public class SettingService {
 		//return new Message();
 	}
     public Message saveNewCountAndRate(Map map) throws KHException {
-    	Validation.isNumber((String)map.get("value"), "number is not allow String");
-    	Validation.isNumber((String)map.get("type"),  "type is not allow String");
-    	Validation.isNumber((String)map.get("day"),   "number is not allow String");
-		Validation.isRate((String)map.get("rate"),    "Rate is wrong formate!");
+    	Validation.isNumber((String)map.get("value"), "អនុញ្ញាតបញ្ចូលតែលេខប៉ុណ្ណោះ");
+    	Validation.isNumber((String)map.get("type"),  "អនុញ្ញាតបញ្ចូលតែលេខប៉ុណ្ណោះ");
+    	Validation.isNumber((String)map.get("day"),   "អនុញ្ញាតបញ្ចូលតែលេខប៉ុណ្ណោះ");
+		Validation.isRate((String)map.get("rate"),    "ការបញ្ជូលការប្រាក់ខុសទំរងសូមផ្ទៀងផ្ទាត់ម្ដងទៀត");
        try {
     	   Setting setting = new Setting();
     	   setting.setColumns((String)map.get("columns"));
@@ -81,11 +81,11 @@ public class SettingService {
     	   setting.setSts("1");
     	   setting.setTxt("2");
     	   if (settingMapper.saveNewCountAndRate(setting) > 0) {
-    		   return new Message("0000", "Insert successfull");
+    		   return new Message("0000", "ការបញ្ជូលទិន្នន័យរបស់លោកអ្នកទទួលជោគជ័យ");
     	   }
-    	   return new Message("0000", "Insert fails");
+    	   return new Message("9999", "ការបញ្ជូលទិន្នន័យរបស់លោកអ្នកទទួលបរាជ័យ");
        }catch(Exception e) {
-    	   throw new KHException("9999","Some Wrong");
+    	   throw new KHException("9999",e.getMessage());
        }
     }
     
@@ -94,9 +94,9 @@ public class SettingService {
     		Setting setting =  settingMapper.loadingSettingById(id);
     		setting.setSts("9");
     		if (settingMapper.settingEditById(setting) > 0) {
-				return new Message("0000", "Edit is succefull");
+				return new Message("0000", "ការលុបទិន្នន័យទទួលបានជោគជ័យ");
 			}
-			return new Message("9999", "Edit is fails");
+			return new Message("9999", "ការលុបទិន្នន័យទទួលបានបរាជ័យ");
     	}catch(Exception e) {
     		throw new KHException("9999",e.getMessage());
     	}

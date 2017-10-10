@@ -96,19 +96,20 @@ public class LoanerService {
 	@Transactional(propagation = Propagation.REQUIRED)
 	public Message loanSaveNewItem(Map map) throws KHException {
 		/*Loaner information */
-		Validation.isNumber((String)map.get("id_card"), "id card");
-		Validation.isNumber((String)map.get("phone"), "phone");
-		Validation.isBlank((String)map.get("address"), "address");
-		Validation.isBlank((String)map.get("loaner_name"), "loaner_name");
+		Validation.isBlank((String)map.get("loaner_name"), "សូមធ្វើការបញ្ជូលលេខឈ្មោះរបស់អ្នកខ្ចី");
+		Validation.isNumber((String)map.get("id_card"), "សូមធ្វើការបញ្ជូលលេខអត្តសញ្ញាណប័ណ្ណរបស់អ្នកខ្ចី");
+		Validation.isNumber((String)map.get("phone"), "សូមធ្វើការបញ្ជូលលេខទូរស័ព្ទរបស់អ្នកខ្ចី");
+		Validation.isBlank((String)map.get("address"), "សូមធ្វើការបញ្ជូលលេខអាស័យដ្ឋានរបស់អ្នកខ្ចី");
+		
 		/*Validation.isEnum(Gender.class, (String)map.get("gender"), "gender");*/
 /*		if (EnumUtils.isValidEnum(Gender.class, (String)map.get("gender")) != true) {
 			throw new KHException("9999", "gender");
 		}*/
 		/*loan information*/
-		Validation.isNumber((String)map.get("total_money"), "total");
-		Validation.isNumber((String)map.get("decrement"), "decrement");
-		Validation.isNumber((String)map.get("time"), "time");		
-		Validation.isRate((String)map.get("rate"), "rate");
+		Validation.isNumber((String)map.get("total_money"), "សូមធ្វើការបញ្ជូលចំនួនទឹកលុយដែលត្រូវខ្ចី");
+		Validation.isNumber((String)map.get("decrement"), "សូមធ្វើការបញ្ជូលចំនួនទឹកលុយដែលត្រូវបង់ថយមួយលើក");
+		Validation.isNumber((String)map.get("time"), "សូមធ្វើការបញ្ជូលចំនួនដងដែលត្រូវបង់ប្រាក់");		
+		Validation.isRate((String)map.get("rate"), "សូមធ្វើការបញ្ជូលអត្រាការប្រាក់នៃចំនួនទឹកប្រាក់ដែលខ្ចី");
 		User user = new User();
 		Loaner loaner = new Loaner();
 		Loan loan = new Loan();
@@ -127,7 +128,7 @@ public class LoanerService {
 				user = (User) auth.getPrincipal();
 				
 			}else {
-				throw new KHException("9999", "user id");
+				throw new KHException("9999", "ការបញ្ជូលទិន្នន័យរបស់លោកអ្នកទទួលបរាជ័យ");
 			}
 			
 			loaner.setUser_id(user.getUser_id());
@@ -144,7 +145,9 @@ public class LoanerService {
 			
 			
 			
-			loanerMapper.insertLoanerItem(loaner);
+			if (loanerMapper.insertLoanerItem(loaner) < 0){
+				throw new KHException("9999", "ការបញ្ជូលទិន្នន័យរបស់លោកអ្នកទទួលបរាជ័យ");
+			}
 
 			
 			loan.setLoaner_id(loaner.getLoaner_id());
@@ -164,7 +167,9 @@ public class LoanerService {
 			loan.setAction("inser Loan");
 					
 			
-			loanMapper.insertLoanItem(loan);
+			if (loanMapper.insertLoanItem(loan) < 0){
+				throw new KHException("9999", "ការបញ្ជូលទិន្នន័យរបស់លោកអ្នកទទួលបរាជ័យ");
+			}
 			
 			Date dt = formatter.parse((String)map.get("start_date"));
 			
@@ -195,7 +200,7 @@ public class LoanerService {
 				loanMapper.insertLoanPayment(loanPayment);
 			}
 
-			return new Message("0000","successfull");
+			return new Message("0000","ការបញ្ជូលទិន្នន័យរបស់លោកអ្នកទទួលជោគជ័យ");
 		}catch(Exception e) {
 			throw new KHException("9999",e.getMessage());
 		}
@@ -241,10 +246,10 @@ public class LoanerService {
 	public Message loanSaveLoanAgain(Map params) throws KHException {
 
 		/*loan information*/
-		Validation.isNumber((String)params.get("total_money"), "total");
-		Validation.isNumber((String)params.get("decrement"), "decrement");
-		Validation.isNumber((String)params.get("time"), "time");		
-		Validation.isRate((String)params.get("rate"), "rate");
+		Validation.isNumber((String)params.get("total_money"), "សូមធ្វើការបញ្ជូលចំនួនទឹកលុយដែលត្រូវខ្ចី");
+		Validation.isNumber((String)params.get("decrement"), "សូមធ្វើការបញ្ជូលចំនួនទឹកលុយដែលត្រូវបង់ថយមួយលើក");
+		Validation.isNumber((String)params.get("time"), "សូមធ្វើការបញ្ជូលចំនួនដងដែលត្រូវបង់ប្រាក់");		
+		Validation.isRate((String)params.get("rate"), "សូមធ្វើការបញ្ជូលអត្រាការប្រាក់នៃចំនួនទឹកប្រាក់ដែលខ្ចី");
 		HashMap<String, String> param = new HashMap<>();
 		User user = new User();
 		Loaner loaner = new Loaner();
@@ -264,7 +269,7 @@ public class LoanerService {
 				user = (User) auth.getPrincipal();
 				
 			}else {
-				throw new KHException("9999", "user id");
+				throw new KHException("9999", "ការបញ្ជូលទិន្នន័យរបស់លោកអ្នកទទួលបរាជ័យ");
 			}
 			
 			int loaner_id = Integer.valueOf((String)params.get("loaner_id"));
@@ -275,7 +280,7 @@ public class LoanerService {
 			loaner.setTxt("1");
 			loaner.setAction("Update Loaner Information (txt)");
 			if (loanerMapper.loanerUpdateById(loaner) < 0) {
-				throw new KHException("9999", "update fails");
+				throw new KHException("9999", "ការបញ្ជូលទិន្នន័យរបស់លោកអ្នកទទួលបរាជ័យ");
 			}
 			
 			loan.setLoaner_id(loaner_id);
@@ -326,7 +331,7 @@ public class LoanerService {
 				loanMapper.insertLoanPayment(loanPayment);
 			}
 
-			return new Message("0000","successfull");
+			return new Message("0000","ការបញ្ជូលទិន្នន័យរបស់លោកអ្នកទទួលជោគជ័យ");
 		}catch(Exception e) {
 			throw new KHException("9999",e.getMessage());
 		}
@@ -380,7 +385,7 @@ public class LoanerService {
 			params.put("startDate", (String)params.get("startDate").trim());
 			params.put("endDate",  String.valueOf(params.get("endDate").trim()));
 			params.put("typePayment", String.valueOf(params.get("typePayment")));
-			System.out.println(" searcher "+ (String)params.get("search").trim());
+			//System.out.println(" searcher "+ (String)params.get("search").trim());
 			PaginationUtils.total = Long.valueOf(loanMapper.loadingLoanListViewCount(params));
 			result.put("total_row", PaginationUtils.total);
 			result.put("loanList", loanMapper.loadingLoanListView(params));
@@ -394,7 +399,6 @@ public class LoanerService {
 	
 	public Message loadingLoanEdit(HashMap<String, String> params) throws KHException {
 		HashMap<String, Object> result = new HashMap<>();
-		//HashMap<String, String> param = new HashMap<>();
 		try {
 			//param.put("loaner_id", String.valueOf(params.get("loaner_id")));
 			//result.put("loanerObject", loanerMapper.loadingLoanerInformationById(params));
@@ -410,15 +414,15 @@ public class LoanerService {
 	public Message loanSaveUdateItem(HashMap<String, String> params) throws KHException {
 		HashMap<String, String> param = new HashMap<>();
 		/*Loaner information */
-		Validation.isNumber((String)params.get("id_card"), "id card");
-		Validation.isNumber((String)params.get("phone"), "phone");
-		Validation.isBlank((String)params.get("address"), "address");
-		Validation.isBlank((String)params.get("loaner_name"), "loaner_name");
-
-		Validation.isNumber((String)params.get("total_money"), "total");
-		Validation.isNumber((String)params.get("decrement"), "decrement");
-		Validation.isNumber((String)params.get("time"), "time");		
-		Validation.isRate((String)params.get("rate"), "rate");
+		Validation.isBlank((String)params.get("loaner_name"), "សូមធ្វើការបញ្ជូលលេខឈ្មោះរបស់អ្នកខ្ចី");
+		Validation.isNumber((String)params.get("id_card"), "សូមធ្វើការបញ្ជូលលេខអត្តសញ្ញាណប័ណ្ណរបស់អ្នកខ្ចី");
+		Validation.isNumber((String)params.get("phone"), "សូមធ្វើការបញ្ជូលលេខទូរស័ព្ទរបស់អ្នកខ្ចី");
+		Validation.isBlank((String)params.get("address"), "សូមធ្វើការបញ្ជូលលេខអាស័យដ្ឋានរបស់អ្នកខ្ចី");
+		
+		Validation.isNumber((String)params.get("total_money"), "សូមធ្វើការបញ្ជូលចំនួនទឹកលុយដែលត្រូវខ្ចី");
+		Validation.isNumber((String)params.get("decrement"), "សូមធ្វើការបញ្ជូលចំនួនទឹកលុយដែលត្រូវបង់ថយមួយលើក");
+		Validation.isNumber((String)params.get("time"), "សូមធ្វើការបញ្ជូលចំនួនដងដែលត្រូវបង់ប្រាក់");		
+		Validation.isRate((String)params.get("rate"), "សូមធ្វើការបញ្ជូលអត្រាការប្រាក់នៃចំនួនទឹកប្រាក់ដែលខ្ចី");
 		User user = new User();
 		Loaner loaner = new Loaner();
 		Loan loan = new Loan();
@@ -436,7 +440,7 @@ public class LoanerService {
 				user = (User) auth.getPrincipal();
 				
 			}else {
-				throw new KHException("9999", "user id");
+				throw new KHException("9999", "ការកែប្រែរបស់លោកអ្នកទទួលបរាជ័យ");
 			}
 			
 			int loaner_id = Integer.valueOf((String)params.get("loaner_id"));
@@ -444,7 +448,7 @@ public class LoanerService {
 			loaner = (Loaner)loanerMapper.loadingLoanerInformationById(param);
 			
 			if (loaner == null) {
-				throw new KHException("9999", "update fails");
+				throw new KHException("9999", "ការកែប្រែរបស់លោកអ្នកទទួលបរាជ័យ");
 			}
 			loaner.setLoaner_name((String)params.get("loaner_name"));
 			loaner.setGender((String)params.get("gender"));
@@ -455,14 +459,14 @@ public class LoanerService {
 			loaner.setModify_date(Common.getCurrentDate());
 			loaner.setAction("Update Loaner Information (txt)");
 			if (loanerMapper.loanerUpdateById(loaner) < 0) {
-				throw new KHException("9999", "update fails");
+				throw new KHException("9999", "ការកែប្រែរបស់លោកអ្នកទទួលបរាជ័យ");
 			}
 			
 			int loan_id = Integer.valueOf(params.get("loan_id"));
 			System.out.println("  sakjjdflksafd "+loan_id);
 			loan        = loanMapper.loadingLoanViewCheck(loan_id);
 			if (loan == null) {
-				throw new KHException("9999", "updatefails");
+				throw new KHException("9999", "ការកែប្រែរបស់លោកអ្នកទទួលបរាជ័យ");
 			}
 			
 			loan.setLoaner_id(loaner.getLoaner_id());
@@ -479,14 +483,14 @@ public class LoanerService {
 			loan.setAction("update Loan");
 			
 			if (loanMapper.updateLoanById(loan) < 0) {
-				throw new KHException("9999", "laon update fails");
+				throw new KHException("9999", "ការកែប្រែរបស់លោកអ្នកទទួលបរាជ័យ");
 			}
 			
             Date dt = formatter.parse((String)params.get("start_date"));
 			
             
             if (loanMapper.deleteLoanPaymentByLoanId(loan_id) < 0) {
-            	throw new KHException("9999", "laon update fails");
+            	throw new KHException("9999", "ការកែប្រែរបស់លោកអ្នកទទួលបរាជ័យ");
             }
 			
 			for(int i=1; i<= Integer.valueOf((String)params.get("time")) ; i++) {
@@ -515,7 +519,7 @@ public class LoanerService {
 				loanMapper.insertLoanPayment(loanPayment);
 			}
 			
-			return new Message("0000", "sucessfull hz");
+			return new Message("0000", "ការកែប្រែរបស់លោកអ្នកទទួលបានជោគជ័យ");
 		}catch(Exception e) {
 			throw new KHException("9999", e.getMessage());
 		}
@@ -538,7 +542,7 @@ public class LoanerService {
 				user = (User) auth.getPrincipal();
 				
 			}else {
-				throw new KHException("9999", "user id");
+				throw new KHException("9999", "ការកែប្រែរបស់លោកអ្នកទទួលបរាជ័យ");
 			}
 			for (int i=0;i<params.size();i++) {
 				HashMap<String, String> param = new HashMap<>();
@@ -549,10 +553,10 @@ public class LoanerService {
 				param.put("txt", "9");
 				param.put("action", "update Information");
 				if (loanMapper.loanPaymentSaveUpdate(param)<0) {
-					throw new KHException("9999", "fails");
+					throw new KHException("9999", "ការកែប្រែរបស់លោកអ្នកទទួលបរាជ័យ");
 				}
 			}
-			return new Message("0000","successfull");
+			return new Message("0000","ការកែប្រែរបស់លោកអ្នកទទួលបានជោគជ័យ");
 		}catch(Exception e) {
 			throw new KHException("9999", e.getMessage());
 		}
