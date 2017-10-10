@@ -35,7 +35,7 @@ function init(page){
 	console.log(object);
 	$.ajax({
 		type:'GET',
-		url :'/loadingLoanListView',
+		url :'/khmoney/loadingLoanListView',
 		data:object,
 		success:function(json){
 			console.log(json);
@@ -85,7 +85,7 @@ function init(page){
 								+'<td><div class="t_right">'+amount+' ៛</div></td>'
 								+'<td><div>'+end_date+'</div></td>'
 								+'<td><div class="t_center">'+(value.txt=='9'?'បានបញ្ចប់':'រង់ចាំ')+'</div></td>'
-								+'<td><div><a href="/loan/loan-view-detail?loaner_id='+value.loaner_id+'&loan_id='+value.loan_id+'&id=loan" style="width:50px;">លំអិត</a><a href="/loan/loan-edit?loaner_id='+value.loaner_id+'&loan_id='+value.loan_id+'" style="width:50px;">កែប្រែ</a></div></td>'
+								+'<td><div><a href="/khmoney/loan/loan-view-detail?loaner_id='+value.loaner_id+'&loan_id='+value.loan_id+'&id=loan" style="width:50px;">លំអិត</a><a href="/khmoney/loan/loan-edit?loaner_id='+value.loaner_id+'&loan_id='+value.loan_id+'" style="width:50px;">កែប្រែ</a></div></td>'
 							+'</tr>';
 					i++;
 				});

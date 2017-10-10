@@ -29,7 +29,7 @@ function init(){
 	if ($('#loan_id').val() == ''){
 		$.ajax({
 			type:'GET',
-			url :'/loadingLoanview',
+			url :'/khmoney/loadingLoanview',
 			data:'loaner_id='+$('#loaner_id').val()+'&id='+$('#id').val(),
 			success:function(json){
 				loanerGetMaxId(json);
@@ -45,7 +45,7 @@ function init(){
 		}
 		$.ajax({
 			type:'GET',
-			url :'/loadingLoanEdit',
+			url :'/khmoney/loadingLoanEdit',
 			data:data,
 			success:function(json){
 				loanerGetMaxId(json);
@@ -191,7 +191,7 @@ function checkForPayment(){
 	
 	/*$('#popup_prak_derm').val(Common.numberWithComma(prak_derm+'')+' ៛');
 	$('#popup_rate').val(Common.numberWithComma(rate)+' ៛');*/
-	$('#popup_total').val(Common.numberWithComma(Common.ConvertZeroTwoDigit(total+''))+' ៛');
+	$('#popup_total').text(Common.numberWithComma(Common.ConvertZeroTwoDigit(total+''))+' ៛');
 	$('#popu_alert_wrap').bPopup();
 }
 function change(obj){
@@ -226,7 +226,7 @@ function loanPaymentSaveUpdate(){
 	console.log(dt);
 	$.ajax({
 		type:'GET',
-		url :'/loanPaymentSaveUpdate',
+		url :'/khmoney/loanPaymentSaveUpdate',
 		data:dt,
 		success:function(json){
 			if (json.code == 'undefined'){
@@ -234,7 +234,7 @@ function loanPaymentSaveUpdate(){
 				return;
 			}
 			 alert(json.message);
-			 window.location.href = '/missing-payment/payment?loaner_id='+$('#loaner_id').val()+'&loan_id='+$('#loan_id').val();
+			 window.location.href = '/khmoney/missing-payment/payment?loaner_id='+$('#loaner_id').val()+'&loan_id='+$('#loan_id').val();
 		},error:function(json){
 			console.log(json);
 		}

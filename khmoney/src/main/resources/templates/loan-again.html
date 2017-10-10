@@ -6,9 +6,9 @@
 <meta charset="utf-8">
 <meta http-equiv="Cache-Control" content="No-Cache">
 <meta http-equiv="Pragma" content="No-Cache">
-<link rel="stylesheet" href="../css/reset.css">
-<link rel="stylesheet" href="../css/content.css">
-<link rel="stylesheet" href="../css/jquery-ui.min.css">
+<link rel="stylesheet" th:href="@{/css/reset.css}">
+<link rel="stylesheet" th:href="@{/css/content.css}">
+<link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}">
 </head>
 
 <body class="lnb_bg">
@@ -259,16 +259,15 @@
    <input type="hidden" th:value="${loaner_id}" id="loaner_id"/>
 	
 </div>
-	<script src="../js/lib/jquery-1.8.3.min.js"></script>
-	<script src="../js/lib/autoNumeric.min.js"></script>
-	<script src="../js/lib/jquery.bpopup.min.js"></script>
-	<script src="../js/lib/jquery-ui.min.js"></script>
-	<script src="../js/lib/moment.min.js"></script>
-	<script src="../js/common/Common.js"></script>
-	<script src="../js/loanagain.js"></script>
-</body>
-</html>
-
+	<script th:src="@{js/lib/jquery-1.8.3.min.js}"></script>
+	<script th:src="@{js/lib/autoNumeric.min.js}"></script>
+	<script th:src="@{js/lib/jquery.bpopup.min.js}"></script>
+	<script th:src="@{js/lib/jquery-ui.min.js}"></script>
+	<script th:src="@{js/lib/moment.min.js}"></script>
+	<script th:src="@{js/common/Common.js}"></script>
+	<script th:src="@{js/loanagain.js}"></script>
+	
+	
 <!-- popup form -->
 <div class="alert_wrap frm" style="display:none;">
 	<div class="alert_inner">
@@ -396,5 +395,7 @@
 <!-- //popup form -->
 <!-- loading.... -->
 <div style="display:none;" id="loading">
-    <img src="../img/loading.gif" alt="LAON" height="50" width="50">
+    <img th:src="@{img/loading.gif}" alt="LAON" height="50" width="50">
 </div>
+</body>
+</html>

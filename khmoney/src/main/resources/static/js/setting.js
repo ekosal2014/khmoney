@@ -4,7 +4,7 @@ $(document).ready(function(){
 function loadingData() {
 	 $.ajax({
          type: 'GET',
-         url : '/loadingListSetting',
+         url : '/khmoney/loadingListSetting',
          success : function(json){
          	console.log(json) ;  
          	$('#wrap_content_setting').empty();
@@ -55,7 +55,7 @@ function loadingData() {
 										tbl += '<a href="javascript:" class="btn_delete_1" onClick="deleteSettingById(this)"><span class="blind">delete</span></a>'
 									}
 		         				    if ((i+1) == value.length){
-		         				    	   tbl += '<a href="javascript:" class="btn_add_1" onClick="addNewCountAndRate(this);"><span class="blind">add</span></a>'
+		         				    	tbl += '<a href="javascript:" class="btn_add_1" onClick="addNewCountAndRate(this);"><span class="blind">add</span></a>'
 		         				    }			         				    
 								tbl	+='</div>'
 									+'</td>'
@@ -81,7 +81,6 @@ function loadingData() {
 }
 
 function showTextBoxEditData(obj){
-	console.log(" hello "+this);
 	$(obj).parents('tr').find('.rate_show').hide();
 	$(obj).parents('tr').find('.value_show').hide();
 	$(obj).parents('tr').find('.div_rate').show();
@@ -98,7 +97,7 @@ function saveEditCountAndRate(obj){
 	}
 	 $.ajax({
          type: 'GET',
-         url : '/settingEditById',
+         url : '/khmoney/settingEditById',
          data: data,
          success : function(json){
         	 if (json.code == '9999'){
@@ -124,8 +123,8 @@ function addNewCountAndRate(obj){
 		+'<td>'
 		+'<div>'		
 		+'<a href="javascript:" class="btn_save"   onClick="saveNewCountAndRate(this);"><span class="blind">save</span></a>'
-		+'<a href="javascript:" class="btn_delete_1"><span class="blind">delete</span></a>'
-		+'<a href="javascript:" class="btn_cancel"  onClick="showTextBoxEditData(this);"><span class="blind">cancel </span></a>'
+		/*+'<a href="javascript:" class="btn_delete_1"><span class="blind">delete</span></a>'*/
+		+'<a href="javascript:" class="btn_delete_1"  onClick="showTextBoxEditData(this);"><span class="blind">- </span></a>'
 		+'</div>'
 		+'</td>'
 		+'</tr>';
@@ -144,7 +143,7 @@ function saveNewCountAndRate(obj){
 	}
 	$.ajax({
          type: 'GET',
-         url : '/saveNewCountAndRate',
+         url : '/khmoney/saveNewCountAndRate',
          data: data,
          success : function(json){
         	 if (json.code == '9999'){
@@ -167,7 +166,7 @@ function deleteSettingById(obj){
 		if (confirm('Do you to delete value='+ value + 'and rate ='+rate+' this Item.' )== true){
 			$.ajax({
 		         type: 'GET',
-		         url : '/deleteSettingById',
+		         url : '/khmoney/deleteSettingById',
 		         data: 'id='+$(obj).parents('tr').find('.id').val(),
 		         success : function(json){
 		        	 if (json.code == '9999'){

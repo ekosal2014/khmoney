@@ -59,7 +59,7 @@ function init(){
 function loanerGetMaxId(){
 	$.ajax({
 		type:'GET',
-		url :'/loanerGetMaxId',
+		url :'/khmoney/loanerGetMaxId',
 		success:function(json){
 			if (json.code == 'undefined'){
 				alert(json.message);
@@ -84,7 +84,7 @@ function loadingSettingData(){
 	$('#div_decrement').hide();
 	$.ajax({
 		type:'GET',
-		url :'/loadingSettingData',
+		url :'/khmoney/loadingSettingData',
 		success:function(json){
 			if (json.code == 'undefined'){
 				alert(json.message);
@@ -351,7 +351,7 @@ function loanSaveNewItem(){
 	console.log(data);
 	$.ajax({
 		type:'GET',
-		url :'/loanSaveNewItem',
+		url :'/khmoney/loanSaveNewItem',
 		data:data,
 		success:function(json){
 			if (json.code == 'undefined'){

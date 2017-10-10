@@ -63,7 +63,7 @@ function loanerGetMaxId(){
 	}
 	$.ajax({
 		type:'GET',
-		url :'/loadingLoanEdit',
+		url :'/khmoney/loadingLoanEdit',
 		data:data,
 		success:function(json){
 			console.log(json);
@@ -156,7 +156,7 @@ function loadingSettingData(){
 	$('#div_decrement').hide();
 	$.ajax({
 		type:'GET',
-		url :'/loadingSettingData',
+		url :'/khmoney/loadingSettingData',
 		success:function(json){
 			if (json.code == 'undefined'){
 				alert(json.message);
@@ -415,7 +415,7 @@ function loanSaveEdittem(){
 	console.log(data);
 	$.ajax({
 		type:'GET',
-		url :'/loanSaveUdateItem',
+		url :'/khmoney/loanSaveUdateItem',
 		data:data,
 		success:function(json){
 			console.log(json);

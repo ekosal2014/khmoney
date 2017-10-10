@@ -27,7 +27,7 @@ public class KHController {
 		if(!auth.getPrincipal().equals("anonymousUser")){
 			System.out.println(auth.getPrincipal());
 			model.addAttribute("logged",true);
-			return "redirect:/";
+			return "redirect:/khmoney/";
 		}
 		return "login";
 	}

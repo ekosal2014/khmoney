@@ -23,7 +23,7 @@ function goPageList(page){
 	console.log(data);
 	$.ajax({
 		type:'GET',
-		url :'/loadingLoanerListInformation',
+		url :'/khmoney/loadingLoanerListInformation',
 		data: data,
 		success:function(json){
 			if (json.code == '9999'){
@@ -77,8 +77,8 @@ function goPageList(page){
 }
 
 function loanAgain(loaner_id){
-	window.location.href = '/loan/loan-again?loaner_id='+loaner_id;
+	window.location.href = '/khmoney/loan/loan-again?loaner_id='+loaner_id;
 }
 function loanViewDetail(loaner_id,txt){
-	window.location.href = '/loan/loaner-view-detail?loaner_id='+loaner_id+'&id=loaner';
+	window.location.href = '/khmoney/loan/loaner-view-detail?loaner_id='+loaner_id+'&id=loaner';
 }

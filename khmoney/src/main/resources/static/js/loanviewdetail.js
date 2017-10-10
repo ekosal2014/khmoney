@@ -13,7 +13,7 @@ function init(){
 	if ($('#loan_id').val() == ''){
 		$.ajax({
 			type:'GET',
-			url :'/loadingLoanview',
+			url :'/khmoney/loadingLoanview',
 			data:'loaner_id='+$('#loaner_id').val()+'&id='+$('#id').val(),
 			success:function(json){
 				loanerGetMaxId(json);
@@ -29,7 +29,7 @@ function init(){
 		}
 		$.ajax({
 			type:'GET',
-			url :'/loadingLoanEdit',
+			url :'/khmoney/loadingLoanEdit',
 			data:data,
 			success:function(json){
 				loanerGetMaxId(json);
@@ -217,7 +217,7 @@ function loanerGetMaxId(json){
 function loanShowBytime(){
 	$.ajax({
 		type:'GET',
-		url :'/loanShowBytime',
+		url :'/khmoney/loanShowBytime',
 		data:'loan_id='+$('#type_payment').val(),
 		success:function(json){
 			console.log(json);

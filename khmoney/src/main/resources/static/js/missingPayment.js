@@ -16,7 +16,7 @@ function init (){
 	}
 	$.ajax({
 		type:'GET',
-		url :'/missingPaymentList',
+		url :'/khmoney/missingPaymentList',
 		data: data,
 		success:function(json){
 			console.log(json);
@@ -57,6 +57,6 @@ function init (){
 function goToPayemnt(obj){
 	var loaner_id = $(obj).attr('data_loaner_id');
 	var loan_id   = $(obj).attr('data_loan_id');
-	window.location.href = '/missing-payment/payment?loaner_id='+loaner_id+'&loan_id='+loan_id;
+	window.location.href = '/khmoney/missing-payment/payment?loaner_id='+loaner_id+'&loan_id='+loan_id;
 	
 }

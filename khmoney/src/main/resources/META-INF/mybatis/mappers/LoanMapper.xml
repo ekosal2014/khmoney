@@ -194,7 +194,7 @@
 		<if test="typePayment != null and typePayment != ''">
 			AND type_payment = #{typePayment}
 		</if> 
-		order by start_date
+		order by start_date desc
 		limit cast(#{perPage} as int) offset cast(#{start} as int)
 	</select>
 	<select id="loadingLoanListViewCount" parameterType="java.util.HashMap" resultType="java.lang.Integer">

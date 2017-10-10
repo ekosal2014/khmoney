@@ -5,7 +5,7 @@ if (!Common.optionDatePicker){
 		changeMonth : true,
 		changeYear  : true,
 		showOn: "button",
-		buttonImage: "../img/icon/ico_calendar.png",
+		buttonImage: "/khmoney/img/icon/ico_calendar.png",
 		buttonImageOnly: true,
 		buttonText: "Select date",
 		monthNames  : ['ខែ01','ខែ02','ខែ03','ខែ04','ខែ05','ខែ06','ខែ07','ខែ08','ខែ09','ខែ10','ខែ11','ខែ12'],
