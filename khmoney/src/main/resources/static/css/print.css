@@ -101,7 +101,7 @@
 #tit_wrap{display:none !important;}
 
 .tit_wrap .tit_h4{border-bottom:1px solid #aaa;}
-.tit_wrap .tit_h4 h4{display:inline-block;margin:0;padding:5px 0 2px 10px;font-size:14px;font-family:"Khmer OS Bokor", "Khmer OS Content", "Khmer OS Battambang", "Khmer OS Siemreap", "Khmer OS System";color:#222;line-height:20px;background-image:url(../img/bul/bul_01_01.png);background-repeat:no-repeat;background-position:0 50%;}
+.tit_wrap .tit_h4 h4{display:inline-block;margin:0 0 3px 0;padding:5px 0 2px 10px;font-size:14px;font-family:"Khmer OS Bokor", "Khmer OS Content", "Khmer OS Battambang", "Khmer OS Siemreap", "Khmer OS System";color:#222;line-height:20px;background-image:url(../img/bul/bul_01_01.png);background-repeat:no-repeat;background-position:0 50%;}
 
 
 .tit_wrap .tit_h3 ul{display:block;overflow:hidden;padding-left:0;}
@@ -118,7 +118,7 @@
 
 
 .tit_wrap .right_box{position:absolute;top:0;right:0;}
-a.btn_addnew, a.btn_save{display:inline-block;min-width:50px;height:25px;padding:0 10px;font-family:"Khmer OS Battambang","Khmer OS Bokor", "Khmer OS Content", "Khmer OS Siemreap", "Khmer OS System";color:#fff;background-image:url(../img/icon/btn_addnew_over.png);background-repeat:no-repeat;background-position:50% 2px;background-size:18px auto;background-color:#69A8FD;text-align:center;border-radius:3px;}
+a.btn_addnew, a.btn_save{display:none;min-width:50px;height:25px;padding:0 10px;font-family:"Khmer OS Battambang","Khmer OS Bokor", "Khmer OS Content", "Khmer OS Siemreap", "Khmer OS System";color:#fff;background-image:url(../img/icon/btn_addnew_over.png);background-repeat:no-repeat;background-position:50% 2px;background-size:18px auto;background-color:#69A8FD;text-align:center;border-radius:3px;}
 a.btn_addnew:hover{background-image:url(../img/icon/btn_addnew_over.png);}
 a.btn_addnew:hover, a.btn_save:hover{color:#fff;background-color:#0070c0;}
 a.btn_save{background-image:none;}
