@@ -4,7 +4,14 @@ $(document).ready(function(){
 		loanShowBytime();
 	});
 	$('#btn_print').click(function(){
-		$('.container').printElement();
+		$(".wrap").printElement( 
+				{
+					overrideElementCSS:[
+					'css/print.css', 
+					{ href:'css/print.css',media:'print'}] 
+					}); 
+
+				});
 	});
 });
 
