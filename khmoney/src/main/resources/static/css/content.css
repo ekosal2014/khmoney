@@ -11,9 +11,9 @@
 .wrap{margin:0;padding:0;min-width:1280px;}
 
 /* header */
-.header{display:block;margin:0;padding:7px 0;height:25px;border-bottom:2px solid #0C51F4;/*background-color:#0C51F4;*/}
+.header{display:block;margin:0;padding:7px 0;height:30px;border-bottom:2px solid #0C51F4;/*background-color:#0C51F4;*/}
 .header .logo{float:left;display:inline-block;vertical-align:top;padding:0 0 0 15px;}
-.header .logo img{display:block;height:45px;}
+.header .logo img{display:block;height:32px;margin-left:30px;}
 
 /* container */
 .container{clear:both;/*padding:0 0 0 210px;*/}
@@ -96,7 +96,7 @@
 .btn_add_group a{display:block;height:27px;line-height:27px;padding:2px 0 0 62px;background:url(../img/btn/btn_add_group.png) no-repeat;color:#89909d;}
 
 /* title_wrap */
-.tit_wrap{position:relative;isplay:block;margin:0;padding:0 0 5px 0;border-bottom:1px solid #fff;}
+.tit_wrap{position:relative;isplay:block;margin:0;padding:10px 0 5px 0;border-bottom:1px solid #fff;}
 .tit_wrap .tit_h3 h3{display:inline-block;margin:0;padding:5px 0 2px 17px;font-size:20px;font-family:"Khmer OS Muol","Khmer OS Bokor", "Khmer OS Content", "Khmer OS Battambang", "Khmer OS Siemreap", "Khmer OS System";color:#3598db;line-height:20px;background-image:url(../img/bul/bul_01.png);background-repeat:no-repeat;background-position:0 50%;text-decoration:underline;}
 
 .tit_wrap .tit_h4{border-bottom:1px solid #aaa;}

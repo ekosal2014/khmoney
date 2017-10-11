@@ -7,11 +7,10 @@ $(document).ready(function(){
 		$(".wrap").printElement( 
 				{
 					overrideElementCSS:[
-					'css/print.css', 
-					{ href:'css/print.css',media:'print'}] 
-					}); 
+					'/khmoney/css/print.css', 
+					{ href:'/khmoney/css/print.css',media:'print'}] 
+				}); 
 
-				});
 	});
 });
 
