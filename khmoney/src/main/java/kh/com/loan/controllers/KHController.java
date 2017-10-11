@@ -10,6 +10,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kh.com.loan.domains.Message;
+import kh.com.loan.domains.User;
 import kh.com.loan.services.UserService;
 import kh.com.loan.utils.KHException;
 import kh.com.loan.utils.SessionException;
@@ -18,15 +19,14 @@ import kh.com.loan.utils.SessionUtils;
 @Controller
 public class KHController {
 	
-	@Autowired
-	private UserService userService;
 
 	@RequestMapping("/login")
 	public String loginPage(ModelMap model){
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		if(!auth.getPrincipal().equals("anonymousUser")){
-			System.out.println(auth.getPrincipal());
-			model.addAttribute("logged",true);
+		if(!auth.getPrincipal().equals("anonymousUser")){			
+			User user = (User) auth.getPrincipal();
+			System.out.println(user.getFull_name());
+			model.addAttribute("user",user);
 			return "redirect:/khmoney/";
 		}
 		return "login";

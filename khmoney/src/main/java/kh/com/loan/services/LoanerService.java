@@ -45,13 +45,21 @@ public class LoanerService {
 	
 	public Message loanerGetMaxId() throws KHException {
 		HashMap<String, String> result = new HashMap<>();
+		User user = new User();
 		try {
+			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+			if (!auth.getPrincipal().equals("anonymousUser")) {
+				user = (User) auth.getPrincipal();
+				
+			}
+			
 			int maxLoanerId = loanerMapper.loanerGetMaxId() + 1;
 			String maxLoanerPad = StringUtils.leftPad(String.valueOf(maxLoanerId), 9, "0");
 			int maxLoanId = loanMapper.loanGetMaxId() + 1;
 			String maxLoanPad =  StringUtils.leftPad(String.valueOf(maxLoanId), 9, "0");
 			result.put("maxLoanerId", maxLoanerPad);
 			result.put("maxLoanId", maxLoanPad);
+			result.put("userName", user.getFull_name());
 			return new Message("0000", result);
 		}catch(Exception e) {
 			throw new KHException("9999", e.getMessage());

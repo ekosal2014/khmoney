@@ -61,12 +61,14 @@ function loanerGetMaxId(){
 		type:'GET',
 		url :'/khmoney/loanerGetMaxId',
 		success:function(json){
+			console.log(json);
 			if (json.code == 'undefined'){
 				alert(json.message);
 				return;
 			}
 			$('#loaner_code').val(Common.numberWithComma(json.object.maxLoanerId,"-"));
 			$('#loan_code').val(Common.numberWithComma(json.object.maxLoanId,"-"));
+			$('#agent_txt').val(json.object.userName);
 		},error:function(json){
 			console.log(json);
 		}

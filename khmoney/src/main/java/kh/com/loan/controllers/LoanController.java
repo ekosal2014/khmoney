@@ -83,7 +83,7 @@ public class LoanController {
 	
 	@RequestMapping(value = "/loanSaveNewItem", method = RequestMethod.GET)
 	public @ResponseBody Message loanSaveNewItem(@RequestParam Map params) throws KHException {
-		System.out.println(" Map === "+ params);
+		//System.out.println(" Map === "+ params);
 		return loanerService.loanSaveNewItem(params);
 	}
 	
@@ -99,7 +99,7 @@ public class LoanController {
 
 	@RequestMapping(value = "/loanSaveLoanAgain", method = RequestMethod.GET)
 	public @ResponseBody Message loanSaveLoanAgain(@RequestParam Map params) throws KHException {
-		System.out.println(" Map === "+ params);
+		//System.out.println(" Map === "+ params);
 		return loanerService.loanSaveLoanAgain(params);
 	}
 	
