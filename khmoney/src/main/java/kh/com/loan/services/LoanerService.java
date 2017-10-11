@@ -237,13 +237,20 @@ public class LoanerService {
 	public Message loadingLoanAgain(int loaner_id) throws KHException {
 		HashMap<String, Object> result = new HashMap<>();
 		HashMap<String, String> params = new HashMap<>();
+		User user = new User();
 		try {
+			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+			if (!auth.getPrincipal().equals("anonymousUser")) {
+				user = (User) auth.getPrincipal();
+				
+			}
 			int maxLoanId = loanMapper.loanGetMaxId() + 1;
 			String maxLoanPad =  StringUtils.leftPad(String.valueOf(maxLoanId), 9, "0");
 			result.put("maxLoanId", maxLoanPad);
 			params.put("loaner_id", String.valueOf(loaner_id));
 			params.put("txt", "9");
 			result.put("loanerObject", loanerMapper.loadingLoanerInformationById(params));
+			result.put("userName", user.getFull_name());
 			return new Message("0000", result);
 		}catch(Exception e) {
 			throw new KHException("9999", e.getMessage());

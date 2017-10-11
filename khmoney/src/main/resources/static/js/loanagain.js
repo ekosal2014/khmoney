@@ -75,6 +75,7 @@ function loanerGetMaxId(){
 		    $('input[name=gender][value='+json.object.loanerObject.gender+']').prop('checked',true);
 		    $('#address').val(json.object.loanerObject.address);
 			$('#loan_code').val(Common.numberWithComma(json.object.maxLoanId,"-"));
+			$('#agent_txt').val(json.object.userName);
 		},error:function(json){
 			console.log(json);
 		}
