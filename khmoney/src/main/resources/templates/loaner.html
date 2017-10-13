@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<title>E-Fashion</title>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="No-Cache">
+<meta http-equiv="Pragma" content="No-Cache">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/content.css">
+</head>
+
+<body class="lnb_bg">
+
+<div class="wrap">
+
+	<!-- header -->
+	<div class="header">
+		<div class="f_left cboth">
+			<h1 class="logo"><a href="javascript:"><img src="../img/logo/logo_web.png" alt="LAON"></a></h1>
+		</div>
+	</div>
+	<!-- //header -->
+
+	<!-- Container -->
+	<div class="container">
+
+		<!-- content wrap -->
+		<div class="content">
+			<div class="cnt_wrap">
+
+				<!-- title_wrap -->
+				<div class="tit_wrap cboth">
+					<div class="f_left">
+						<div class="tit_h3">
+							<ul>
+								<li><a th:href="@{/}">ទំព័រដើម</a></li>
+								<!--<li><a href="javascript:">បញ្ចីអ្នកខ្ចី</a></li>
+								<li><a href="javascript:">បញ្ចីកម្ចី</a></li>
+								<li><a href="javascript:">បញ្ចីអ្នកខកខានបង់ប្រាក់</a></li>
+								<li><a href="javascript:">កំណត់គោលការណ៍</a></li>-->
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- //title_wrap -->
+				<!-- <a th:href="@{/loan/loanNew}">AddNew</a> -->
+				<!-- title_wrap -->
+				<div class="tit_wrap cboth">
+					<div class="t_center">
+						<div class="tit_h3"><h3>បញ្ចីអ្នកខ្ចីប្រាក់</h3></div>
+					</div>
+					<div class="f_right">
+						<div class="srch_wrap">
+							
+							<div class="srch_box">
+								<input type="text" value="" placeholder="បញ្ចូល លេខកូដ ឬ ឈ្មោះអ្នកខ្ចី" id="search" style="width:193px;">
+								<a href="javascript:" class="btn_srch" id="tbl_search"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //title_wrap -->
+
+				<!-- table_list -->
+				<div class="tbl_lst1 mgt5" id="tbl_loan">
+					<table summary="">
+						<caption></caption>
+						<colgroup>
+						<col style="width:60px;">
+						<col style="width:60px;">
+						<col style="width:200px;">
+						<col>
+						<col>
+						<col>
+						<col style="width:120px;">
+						<col style="width:100px;">
+						<col style="width:100px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th><div><input type="checkbox"></div></th>
+								<th><div>ល.រ</div></th>
+								<th><div>លេខកូដ</div></th>
+								<th><div>ឈ្មោះអ្នកខ្ចី</div></th>
+								<th><div>ភេទ</div></th>
+								<th><div>លេខទូរសព្ទ័</div></th>
+								<th><div>អត្ដសញ្ញាណបត្រ័</div></th>
+								<th><div>សណ្ថានភាព</div></th>
+								<th><div>ដំណើរការ</div></th>
+							</tr>
+						</thead>
+						<tfoot style="display:none;">
+							<tr><td colspan="9"><div class="t_center">ពុំទាន់មានទិន្នន័យនៅឡើយទេ</div></td></tr>
+						</tfoot>
+						<tbody style="display:;">
+							<!-- <tr>
+								<td><div><input type="checkbox"></div></td>
+								<td><div>1</div></td>
+								<td><div>LK-000-001</div></td>
+								<td><div>អេ កុសល</div></td>
+								<td><div>ប្រុស</div></td>
+								<td><div>010-019-234</div></td>
+								<td><div>123-234-456</div></td>
+								<td><div>បានបញ្ចប់</div></td>
+								<td><div>ខ្ចីម្ដងទៀត</div></td>
+							</tr> -->
+						</tbody>
+					</table>
+				</div>
+				<!-- //table_list -->
+
+				<!-- Paging wrap -->
+				<div class="paging_wrap">
+					<div class="combo_wrap">
+						<div class="combo_style">
+							<select style="width:;" name="type_payment" id="num_rows">
+								<option value="15">15</option>
+								<option value="30">30</option>
+								<option value="50">50</option>
+							</select>
+							<!-- <a href="javascript:" class="btn_style btn_combo_down" id="btn_combo_down"><span>15</span></a>
+							<ul style="display:none;" id="btn_ul_down">
+								<li><a href="javascript:">15</a></li>
+								<li><a href="javascript:">20</a></li> 
+								<li><a href="javascript:">50</a></li>
+							</ul> -->
+						</div>
+					</div>
+		
+					<!-- pagination -->
+					<div class="paging">
+						<!-- <a href="javascript:" class="btn_pag_cntr first"><span class="blind">first</span></a>
+						<a href="javascript:" class="btn_pag_cntr prev"><span class="blind">previous</span></a>
+						<span class="pag_num">
+							<a href="javascript:" class="on">1</a><a href="javascript:">2</a><a href="javascript:">3</a><a href="javascript:">4</a><a href="javascript:">5</a><a href="javascript:">6</a><a href="javascript:">7</a><a href="javascript:">8</a><a href="javascript:">9</a><a href="javascript:">10</a>
+						</span>
+						<a href="javascript:" class="btn_pag_cntr next on"><span class="blind">next</span></a>
+						<a href="javascript:" class="btn_pag_cntr last on"><span class="blind">last</span></a> -->
+					</div> 
+					<!-- //pagination -->
+				</div>
+				<!-- //Paging wrap -->
+			</div>
+		</div>
+		<!-- //content wrap -->
+	</div>
+	<!-- //Container -->
+	
+	<!-- footer -->
+	<div class="footer" style="display:none;">
+		<!-- Copy right -->
+		<div class="copyright_wrap">
+			<div class="copyright_box">
+				<p><strong>E-Fashion</strong> Cambodia © 2017 Online Store. All Rights Reserved.</p>
+			</div>
+		</div>
+		<!-- //Copy right -->
+	</div>
+	<!-- //footer -->
+
+	
+</div>
+     <script src="../js/lib/jquery-1.8.3.min.js"></script>
+     <script src="../js/lib/jquery.bpopup.min.js"></script>
+	<script src="../js/common/Common.js"></script>
+	<script src="../js/common/pagination.js"></script>
+	<script src="../js/loaner.js"></script>
+<div style="display:none;" id="loading">
+    <img src="../img/loading.gif" alt="LAON" height="50" width="50">
+</div>
+</body>
+</html>

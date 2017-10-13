@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kh.com.loan.mappers.LoanerMapper">
+	<select id="loanerGetMaxId" resultType="java.lang.Integer">
+		SELECT coalesce(MAX(loaner_id),0) AS id 
+		FROM tblloaner
+	</select>
+	<!-- get Count Rows -->
+	<select id="loadingTotalCountRows" resultType="java.lang.Integer" parameterType="java.util.HashMap">
+		SELECT 
+			  COUNT(*) AS TotalCountRows
+		  FROM tblloaner
+		  WHERE 1=1 AND sts != '9'
+		 <if test="search != null">
+		  		AND (  cast(loaner_id as varchar )   Like '%'|| #{search} || '%'
+		  		    OR loaner_name Like '%'|| #{search} || '%'
+		  		    OR id_card     Like '%'|| #{search} || '%'
+		  		    OR address     Like '%'|| #{search} || '%'
+		  		    OR phone       Like '%'|| #{search} || '%'
+		  		    )
+		  </if>
+		  
+	</select>
+	<!-- loading loaner list information -->
+	<select id="loadingLoanerListInformation" resultType="kh.com.loan.domains.Loaner" parameterType="java.util.HashMap">
+		SELECT 
+			  loaner_id
+			, user_id
+			, loaner_name
+			, id_card
+			, gender
+			, phone
+			, sts
+			, txt
+			, modify_date
+			, modify_by
+			, action
+			, address
+		  FROM tblloaner
+		  WHERE 1=1 AND sts != '9'
+		  <if test="search != null">
+		  		AND (  cast(loaner_id as varchar )   Like '%'|| #{search} || '%'
+		  		    OR loaner_name Like '%'|| #{search} || '%'
+		  		    OR id_card     Like '%'|| #{search} || '%'
+		  		    OR address     Like '%'|| #{search} || '%'
+		  		    OR phone       Like '%'|| #{search} || '%'
+		  		    )
+		  </if>
+		  LIMIT cast(#{perPage} as int) offset cast( #{start} as int)
+		
+	</select>
+	<insert id="insertLoanerItem" parameterType="kh.com.loan.domains.Loaner" useGeneratedKeys="true"  keyProperty="loaner_id">	  
+	    INSERT INTO tblloaner(
+              user_id
+            , loaner_name
+            , id_card
+            , gender
+            , phone
+            , sts
+            , txt           
+            , modify_by
+            , modify_date
+            , action
+            , address)
+       VALUES (
+       		   #{user_id}
+       		 , #{loaner_name}
+       		 , #{id_card}
+       		 , #{gender} 
+       		 , #{phone}
+       		 , #{sts}
+       		 , #{txt}
+       		 , #{modify_by}
+       		 , #{modify_date}
+       		 , #{action}
+       		 , #{address}
+       		 );
+         <selectKey keyProperty="loaner_id" resultType="java.lang.Integer" order="AFTER">
+       		 SELECT CAST(CURRVAL('tblloaner_loaner_id_seq') as INTEGER) 
+       </selectKey>
+	</insert>
+	
+	<!-- loading loaner list information -->
+	<select id="loadingLoanerInformationById" resultType="kh.com.loan.domains.Loaner" parameterType="java.util.HashMap">
+		SELECT 
+			  loaner_id
+			, user_id
+			, loaner_name
+			, id_card
+			, gender
+			, phone
+			, sts
+			, txt
+			, modify_date
+			, modify_by
+			, action
+			, address
+		  FROM tblloaner
+		  WHERE 1=1 AND sts != '9' AND loaner_id=cast(#{loaner_id} as int)
+		  <if test="txt != null">
+		  		AND txt = #{txt}
+		  </if>
+		   
+	</select>
+	<update id="loanerUpdateById" parameterType="kh.com.loan.domains.Loaner">
+		UPDATE tblloaner
+  		   SET   
+  		         user_id=#{user_id}
+  		       , loaner_name=#{loaner_name}
+  		       , id_card=#{id_card}
+  		       , gender=#{gender}
+  		       , phone=#{phone}
+  		       , sts=#{sts}
+  		       , txt=#{txt}
+  		       , modify_date=#{modify_date}
+  		       , modify_by=#{modify_by}
+  		       , action=#{action}
+  		       , address=#{address}
+        WHERE loaner_id = #{loaner_id}
+	</update>
+	
+</mapper>

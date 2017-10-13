@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<title>E-Fashion</title>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="No-Cache">
+<meta http-equiv="Pragma" content="No-Cache">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/content.css">
+</head>
+
+<body class="lnb_bg">
+
+<div class="wrap">
+
+	<!-- header -->
+	<div class="header">
+		<div class="f_left cboth">
+			<h1 class="logo"><a href="#none"><img th:src="@{../img/logo/logo_web.png}" alt="LAON"></a></h1>
+		</div>
+	</div>
+	<!-- //header -->
+
+	<!-- Container -->
+	<div class="container">
+
+		<!-- content wrap -->
+		<div class="content">
+			<div class="cnt_wrap">
+
+				<!-- title_wrap -->
+				<div class="tit_wrap cboth">
+					<div class="f_left">
+						<div class="tit_h3">
+							<ul>
+								<li><a th:href="@{/}">ទំព័រដើម</a></li>
+								<!-- <li><a href="#none">បញ្ចីអ្នកខ្ចី</a></li> -->
+								<!--<li><a href="#none">បញ្ចីកម្ចី</a></li>
+								<li><a href="#none">បញ្ចីអ្នកខកខានបង់ប្រាក់</a></li>
+								<li><a href="#none">កំណត់គោលការណ៍</a></li>-->
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- //title_wrap -->
+				
+				<!-- title_wrap -->
+				<div class="tit_wrap cboth" id="tit_wrap">
+					<div class="t_center">
+						<div class="tit_h3"><h3>កំណត់តំលៃទុកមុន</h3>
+						</div>
+					</div>
+					<!--<div class="f_right">
+						<div class="srch_wrap">
+							<div class="srch_box">
+								<input type="text" value="" placeholder="បញ្ចូល លេខកូដ ឬ ឈ្មោះអ្នកខ្ចី" style="width:193px;">
+								<a href="#none" class="btn_srch"></a>
+							</div>
+						</div>
+					</div>-->
+				</div>
+				<div id="wrap_content_setting"></div>
+				<!-- //title_wrap -->
+				
+				<!-- title_wrap -->
+				<!-- <div class="tit_wrap cboth">
+					<div class="t_left">
+						<div class="tit_h4"><h4>កំណត់ការបង់រំលោះជាថ្ងៃ</h4></div>
+					</div>
+				</div> -->
+				<!-- //title_wrap -->
+				
+				<!-- point_text -->
+				<!-- <p class="point_text">ការកំណត់បន្ថែមចំនួនថ្ងៃត្រូវបង់ប្រាក និងអត្រាការប្រាក់ទុកមុន</p> -->
+				<!-- //point_text -->
+				
+				<!-- table input dot -->
+				<!-- <div class="tbl_input_dot">
+					<table summary="">
+						<caption></caption>
+						<colgroup>
+						<col style="width:100px;">
+						<col style="width:150px;">
+						<col style="width:100px;">
+						<col style="width:200px;">
+						<col style="width:100px;">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th><div>ចំនួន</div></th>
+								<td><div>22 ដង</div></td>
+								<th><div>អត្រាការប្រាក់</div></th>
+								<td><div>1.10 %</div></td>
+								<td>
+									<div>
+										<a href="#none" class="btn_edit1"><span class="blind">edit</span></a>
+										<a href="#none" class="btn_delete_1"><span class="blind">delete</span></a>
+										<a href="#none" class="btn_add_1"><span class="blind">add</span></a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th><div>ចំនួន</div></th>
+								<td><div>22 ដង</div></td>
+								<th><div>អត្រាការប្រាក់</div></th>
+								<td><div>1.10 %</div></td>
+								<td>
+									<div>
+										<a href="#none" class="btn_edit1"><span class="blind">edit</span></a>
+										<a href="#none" class="btn_delete_1"><span class="blind">delete</span></a>
+										<a href="#none" class="btn_add_1"><span class="blind">add</span></a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th><div>ចំនួន</div></th>
+								<td><div>22 ដង</div></td>
+								<th><div>អត្រាការប្រាក់</div></th>
+								<td><div>1.10 %</div></td>
+								<td>
+									<div>
+										<a href="#none" class="btn_edit1"><span class="blind">edit</span></a>
+										<a href="#none" class="btn_delete_1"><span class="blind">delete</span></a>
+										<a href="#none" class="btn_add_1"><span class="blind">add</span></a>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div> -->
+				<!-- //table input dot -->
+				
+				<!-- title_wrap -->
+				<!-- <div class="tit_wrap cboth mgt10">
+					<div class="t_left">
+						<div class="tit_h4"><h4>កំណត់ការបង់រំលោះ 1 សប្ដាហ៍</h4></div>
+					</div>
+					<div class="right_box">
+						<a href="#none" class="btn_addnew"><span class="blind">add new</span></a>
+					</div>
+				</div> -->
+				<!-- //title_wrap -->
+				
+				<!-- point_text -->
+				<!-- <p class="point_text">ការកំណត់បន្ថែមចំនួនដងបង់ប្រាក់ និងអត្រាការប្រាក់ទុកមុន</p> -->
+				<!-- //point_text -->
+
+				<!-- table input dot -->
+				<!-- <div class="tbl_input_dot">
+					<table summary="">
+						<caption></caption>
+						<colgroup>
+						<col style="width:100px;">
+						<col style="width:150px;">
+						<col style="width:100px;">
+						<col style="width:200px;">
+						<col style="width:100px;">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th><div>ចំនួន</div></th>
+								<td><div>5 ដង</div></td>
+								<th><div>អត្រាការប្រាក់</div></th>
+								<td><div>1.10 %</div></td>
+								<td>
+									<div>
+										<a href="#none" class="btn_edit1"><span class="blind">edit</span></a>
+										<a href="#none" class="btn_delete_1"><span class="blind">delete</span></a>
+										<a href="#none" class="btn_add_1"><span class="blind">add</span></a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th><div>ចំនួន</div></th>
+								<td><div>5 ដង</div></td>
+								<th><div>អត្រាការប្រាក់</div></th>
+								<td><div>1.10 %</div></td>
+								<td>
+									<div>
+										<a href="#none" class="btn_edit1"><span class="blind">edit</span></a>
+										<a href="#none" class="btn_delete_1"><span class="blind">delete</span></a>
+										<a href="#none" class="btn_add_1"><span class="blind">add</span></a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th><div>ចំនួន</div></th>
+								<td><div>5 ដង</div></td>
+								<th><div>អត្រាការប្រាក់</div></th>
+								<td><div>1.10 %</div></td>
+								<td>
+									<div>
+										<a href="#none" class="btn_edit1"><span class="blind">edit</span></a>
+										<a href="#none" class="btn_delete_1"><span class="blind">delete</span></a>
+										<a href="#none" class="btn_add_1"><span class="blind">add</span></a>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div> -->
+				<!-- //table input dot -->
+				
+				
+				
+				
+				<!-- <div class="t_right mgt20">
+					<a href="#none" class="btn_save">រក្សាទុក</a>
+				</div> -->
+			</div>
+		</div>
+		<!-- //content wrap -->
+	</div>
+	<!-- //Container -->
+	
+	<!-- footer -->
+	<div class="footer" style="display:none;">
+		<!-- Copy right -->
+		<div class="copyright_wrap">
+			<div class="copyright_box">
+				<p><strong>E-Fashion</strong> Cambodia © 2017 Online Store. All Rights Reserved.</p>
+			</div>
+		</div>
+		<!-- //Copy right -->
+	</div>
+	<!-- //footer -->
+
+	
+</div>
+
+	<script src="../js/lib/jquery-1.8.3.min.js"></script>
+	<script src="../js/lib/autoNumeric.min.js"></script>
+	<script src="../js/lib/function.js"></script>
+	<script src="../js/setting.js"></script>
+</body>
+</html>

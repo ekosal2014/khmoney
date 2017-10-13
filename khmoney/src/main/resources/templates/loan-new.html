@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<title>E-Fashion</title>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="No-Cache">
+<meta http-equiv="Pragma" content="No-Cache">
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/content.css">
+<link rel="stylesheet" href="../css/jquery-ui.min.css">
+</head>
+
+<body class="lnb_bg">
+
+<div class="wrap">
+
+	<!-- header -->
+	<div class="header">
+		<div class="f_left cboth">
+			<h1 class="logo"><a href="#none"><img src="../img/logo/logo_web.png" alt="LAON"></a></h1>
+		</div>
+	</div>
+	<!-- //header -->
+
+	<!-- Container -->
+	<div class="container">
+
+		<!-- content wrap -->
+		<div class="content">
+			<div class="cnt_wrap">
+
+				<!-- title_wrap -->
+				<div class="tit_wrap cboth">
+					<div class="f_left">
+						<div class="tit_h3">
+							<ul>
+								<li><a th:href="@{/}">ទំព័រដើម</a></li>
+								<li><a th:href="@{/loan}">បញ្ចីអ្នកខ្ចី</a></li>
+								<!--<li><a href="#none">បញ្ចីកម្ចី</a></li>
+								<li><a href="#none">បញ្ចីអ្នកខកខានបង់ប្រាក់</a></li>
+								<li><a href="#none">កំណត់គោលការណ៍</a></li>-->
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- //title_wrap -->
+				
+				<!-- title_wrap -->
+				<div class="tit_wrap cboth">
+					<div class="t_center">
+						<div class="tit_h3"><h3>ពត៍មានលំអិតអំពីកម្ចីប្រាក់ម្ដងទៀត</h3>
+						</div>
+					</div>
+					<!--<div class="f_right">
+						<div class="srch_wrap">
+							<div class="srch_box">
+								<input type="text" value="" placeholder="បញ្ចូល លេខកូដ ឬ ឈ្មោះអ្នកខ្ចី" style="width:193px;">
+								<a href="#none" class="btn_srch"></a>
+							</div>
+						</div>
+					</div>-->
+				</div>
+				<!-- //title_wrap -->
+				
+				<!-- title_wrap -->
+				<div class="tit_wrap cboth">
+					<div class="t_left">
+						<div class="tit_h4"><h4>ពត័មានផ្ទាលខ្លូន</h4></div>
+					</div>
+					<!--<div class="f_right">
+						<div class="srch_wrap">
+							<div class="srch_box">
+								<input type="text" value="" placeholder="បញ្ចូល លេខកូដ ឬ ឈ្មោះអ្នកខ្ចី" style="width:193px;">
+								<a href="#none" class="btn_srch"></a>
+							</div>
+						</div>
+					</div>-->
+				</div>
+				<!-- //title_wrap -->
+				
+				<!-- table input dot -->
+				<div class="tbl_input_dot">
+					<table summary="">
+						<caption></caption>
+						<colgroup>
+						<col style="width:100px;">
+						<col>
+						<col style="width:100px;">
+						<col>
+						<col style="width:100px;">
+						<col style="width:150px;">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th><div>លេខកូដអ្នកខ្ចី</div></th>
+								<td><div><input type="text" value="123-456-789" name="" id="loaner_code" placeholder="" readonly="readonly"></div></td>
+								<th><div>ឈ្មោះអ្នកខ្ចី</div></th>
+								<td><div><input type="text" value="" name="" id="loaner_name" placeholder=""></div></td>
+								<th><div>ភេទ</div></th>
+								<td>
+									<div>
+										<label><input type="radio" name="gender" value="1" checked> ប្រុស</label> &nbsp;&nbsp;&nbsp;
+										<label><input type="radio" name="gender" value="2"> ស្រី</label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th><div>អត្ដសញ្ញាណប័ត្រ</div></th>
+								<td><div><input type="text"  value="" name="id_card" id="id_card" placeholder="" maxlength="11" onkeypress='return event.charCode >= 48 && event.charCode <= 57'></div></td>
+								<th><div>លេខទូរសព្ទ័</div></th>
+								<td colspan="4"><div><input type="text" value="" name="phone" id="phone" placeholder="" maxlength="12" onkeypress='return event.charCode >= 48 && event.charCode <= 57'></div></td>
+							</tr>
+							<tr>
+								<th><div>អាស័យដ្ឋាន</div></th>
+								<td colspan="6"><div><input type="text" value="" name="address" id="address" placeholder=""></div></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //table input dot -->
+				
+				<!-- title_wrap -->
+				<div class="tit_wrap cboth mgt10">
+					<div class="t_left">
+						<div class="tit_h4"><h4>ពត័មានទឹកប្រាក់</h4></div>
+					</div>
+					<div class="right_box">
+						<a href="javascript:" class="btn_addnew" id="btn_addMore"><span class="blind">add new</span></a>
+					</div>
+				</div>
+				<!-- //title_wrap -->
+
+				<!-- table input dot -->
+				<div class="tbl_input_dot">
+					<table summary="">
+						<caption></caption>
+						<colgroup>
+						<col style="width:150px;">
+						<col style="width:200px;">
+						<col style="width:150px;">
+						<col style="width:270px;">
+						<col style="width:150px;">
+						<col >
+						</colgroup>
+						<tbody>
+							<tr>
+								<th><div>បណ្ណ័ចំណាយប្រាក់លេខ</div></th>
+								<td><div><input type="text" value="" name="loan_code" id="loan_code" placeholder="" readonly="readonly"></div></td>
+								<th><div>ចំនួនទឹកប្រាក់ដើម</div></th>
+								<td><div><input type="text"  name="total_money_txt" id="total_money_txt"  readonly="readonly"></div></td>
+								<th><div>ជាអក្សរ</div></th>
+								<td><div><input type="text" value="" name="" id="total_money_kh" readonly="readonly" placeholder=""></div></td>
+							</tr>
+							<tr>
+								<th><div>ចំនួនបង់ប្រាក់</div></th>
+								<td><div><input type="text" value="" name="time" id="time_txt" placeholder="" readonly="readonly"></div></td>
+								<th><div>កាលបរិច្ឆេទ​ខ្ចី​ប្រាក់</div></th>
+								<td><div><input type="text" value="" name="start_date_txt" id="start_date_txt" placeholder="" readonly="readonly"></div></td>
+								<th><div>បរិច្ឆេទសង់ប្រាក់លើកតំបូង</div></th>
+								<td><div><input type="text" value="" name="end-date_txt" id="first_date_txt" placeholder="" readonly="readonly"></div></td>
+							</tr>
+							<tr>
+								<th><div>ប្រាក់សន្សំ</div></th>
+								<td><div><input type="text" value="" name="rate_money_txt" id="rate_money_txt" placeholder="" readonly="readonly"></div></td>
+								<th><div>ប្រភេទបង់ប្រាក់</div></th>
+								<td><div><input type="text" value="" name="type_payment_txt" id="type_payment_txt" placeholder="" readonly="readonly"></div></td>
+								<th><div>ប្រភេទប្រាក់</div></th>
+								<td><div><input type="text" value="រៀល​ (៛)" name="type_money_txt" id="type_money_txt" placeholder="" readonly="readonly"></div></td>
+							</tr>
+							<tr>
+								<th><div>ប្រាក់ថយចុះ</div></th>
+								<td ><div><input type="text" value="0 ៛" name="decrement_txt" id="decrement_txt" placeholder="" readonly="readonly"></div></td>
+								 <th><div>ភ្នាក់ងារ</div></th>
+								<td​​ colspan="3"><div><input type="text" value="អេ  កុសល" name="agent_txt" id="decrement_txt" placeholder="" readonly="readonly"></div></td>
+								<!--<th><div></div></th>
+								<td><div></div></td> -->
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //table input dot -->
+
+				<!-- title_wrap -->
+				<div class="tit_wrap cboth mgt10">
+					<div class="t_left">
+						<div class="tit_h4"><h4>តារាងបង់ប្រាក់់</h4></div>
+					</div>
+					<div class="right_box">
+						<a href="javascript:" id="btn_save" class="btn_save">រក្សាទុក</a>
+					</div>
+				</div>
+				<!-- //title_wrap -->
+				
+				<!-- table_list -->
+				<div class="tbl_lst1 mgt5" id="tbl_lst1">
+					<table summary="">
+						<caption></caption>
+						<colgroup>
+						<col style="width:100px;">
+						<col style="width:100px;">
+						<col style="width:100px;">
+						<col style="width:230px;">
+						<col>
+						</colgroup>
+						<thead>
+							<tr>
+								<th><div class="t_center">ល.រ</div></th>
+								<th colspan="2"><div>កាលបរិច្ឆេទសងប្រាក់</div></th>
+								<th style="display:none;"><div class="t_right"​>ចំនួនប្រាក់ដើម</div></th>
+								<th style="display:none;"><div class="t_center">ការប្រាក់</div></th>
+								<th><div class="t_center">ចំនួនទឹកប្រាក់សង់មួយលើកៗ</div></th>
+								<th><div class="t_center">សំគាល់ផ្សេងៗ</div></th>
+								<th style="display:none;"><div class="t_center">ប្រាក់ដើមជំពាក់</div></th>
+								<th style="display:none;"><div class="t_center">កាលបរិច្ឆេទទទួល</div></th>
+								<th style="display:none;"><div class="t_center">អ្នកទទួល</div></th>
+							</tr>
+						</thead>
+						<tfoot style="display:;">
+							<tr><td colspan="5"><div class="t_center">ពុំទាន់មានទិន្នន័យនៅឡើយទេ</div></td></tr>
+						</tfoot>
+						<tbody style="display:;">
+							<!-- <tr>
+								<td><div class="t_center">1</div></td>
+								<td><div>ច័ន្ទ &nbsp;&nbsp;&nbsp; 15/10/2017</div></td>
+								<td style="display:none;"><div class="t_right">1,000,000 រៀល</div></td>
+								<td style="display:none;"><div></div></td>
+								<td><div class="t_right">1,000,000</div></td>
+								<td><div></div></td>
+								<td style="display:none;"><div class="t_right">1,000,000 រៀល</div></td>
+								<td style="display:none;"><div></div></td>
+								<td style="display:none;"><div></div></td>
+							</tr>	 -->	
+												
+						</tbody>
+					</table>
+				</div>
+				<!-- //table_list -->				
+			</div>
+		</div>
+		<!-- //content wrap -->
+	</div>
+	<!-- //Container -->
+	<input type="hidden" id="rate_db">
+	<input type="hidden" id="type_payment_db">
+	<input type="hidden" id="end_date_db">
+	<input type="hidden" id="day_db">
+	<!-- footer -->
+	<div class="footer" style="display:none;">
+		<!-- Copy right -->
+		<div class="copyright_wrap">
+			<div class="copyright_box">
+				<p><strong>E-Fashion</strong> Cambodia © 2017 Online Store. All Rights Reserved.</p>
+			</div>
+		</div>
+		<!-- //Copy right -->
+	</div>
+	<!-- //footer -->
+
+	
+</div>
+	<script src="../js/lib/jquery-1.8.3.min.js"></script>
+	<script src="../js/lib/autoNumeric.min.js"></script>
+	<script src="../js/lib/jquery.bpopup.min.js"></script>
+	<script src="../js/lib/jquery-ui.min.js"></script>
+	<script src="../js/lib/moment.min.js"></script>
+	<script src="../js/common/Common.js"></script>
+	<script src="../js/loanNew.js"></script>
+	<!-- popup form -->
+<div class="alert_wrap frm" style="display:none;">
+	<div class="alert_inner">
+		<div class="alert_tit">
+			<h1>បញ្ចូលពត័មានទឹកប្រាក់</h1>
+			<a href="javascript:" class="btn_close"><span class="blind">close</span></a>
+		</div>
+		<div class="aler_cnt" style="height: auto !important;padding-bottom: 0px !important;">
+			<!-- table input popup -->
+			<div class="tbl_input_pop">
+				<table summary="">
+					<caption></caption>
+					<colgroup>
+					<col style="width:100px;">
+					<col>
+					<col style="width:100px;">
+					<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th><div>ទឹកប្រាក់សរុប</div></th>
+							<td colspan="3"><div><input type="text" value="" name="" id="popup_total_money" placeholder=""></div></td>
+						</tr>
+						<tr>
+							<th><div>ប្រភេទបង់ប្រាក់</div></th>
+							<td colspan="3">
+								<div>
+									<select style="width:;" name="type_payment" id="type_payment">
+										<option>បង់ជា ថ្ងៃ</option>
+										<option>បង់ជា ១​ អាទិត្យ</option>
+										<option>បង់ជា ២ អាទិត្យ</option>
+										<option>បង់ជា​ ខែ</option>
+									</select>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th><div></div></th>
+							<td colspan="3">
+								<div id="div_time">
+									<!-- <label><input type="radio" name="time" checked="checked"> 05​ ដង</label>&nbsp;&nbsp;&nbsp;&nbsp;
+									<label><input type="radio" name="time"> 10​ ដង</label>&nbsp;&nbsp;&nbsp;&nbsp;
+									<label><input type="radio" name="time"> 15 ដង</label>&nbsp;&nbsp;&nbsp;&nbsp;
+									<label><input type="radio" name="time"> 20 ដង</label>&nbsp;&nbsp;&nbsp;&nbsp;
+									<label><input type="radio" name="time"> 25 ដង</label>&nbsp;&nbsp;&nbsp;&nbsp;
+									<label><input type="radio" name="time"> ផ្សេងៗ</label>-->
+								</div>
+							</td>
+						</tr>
+						<tr style="display:none;" id="loadingSettingOtherValue">
+							<th><div>ចំនួនបង់ប្រាក់</div></th>
+							<td><div><input type="text" value="" name="" placeholder="" id="popup_time"></div></td>
+							<th><div>អត្រាកាប្រាក់</div></th>
+							<td><div><input type="text" value="" name="" placeholder="" id="popup_rate"></div></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- //table input popup -->
+			<div class="tbl_input_pop mgt10 t_line1" style="padding: 10px 30px;height: auto !important;">
+				<table summary="">
+					<caption></caption>
+					<colgroup>
+					<col style="width:100px;">
+					<col>
+					<col style="width:100px;">
+					<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th><div>បរិច្ឆេទទទួលប្រាក់</div></th>
+							<td><div><input type="text" value="" name="" placeholder="" readonly="readonly"​​ id="popup_start_date" style="width: 75%;margin-right:3px;"></div></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>			
+			<!-- table input popup -->
+			<div class="tbl_input_pop mgt10 t_line1" style="height: auto !important;">
+				<table summary="">
+					<caption></caption>
+					<colgroup>
+					<col style="width:100px;">
+					<col>
+					<col style="width:100px;">
+					<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th><div>ការបង់ប្រាក់</div></th>
+							<td colspan="3">
+								<div>
+									<label><input type="radio" name="rd_decrement" checked="checked" value=""> បង់ថេរ</label>&nbsp;&nbsp;&nbsp;&nbsp;
+									 <label style="display:none;"><input type="radio" name="rd_decrement" value="decrement" > បង់ថយ</label> 
+									
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th><div></div></th>
+							<td colspan="3">
+								<div id="div_decrement">
+									<!-- <label><input type="radio" name="decrement"> 5,000 រៀល</label>&nbsp;&nbsp;&nbsp;&nbsp;
+									<label><input type="radio" name="decrement"> 10,000 រៀល</label>&nbsp;&nbsp;&nbsp;&nbsp;
+									<label><input type="radio" name="decrement"> 15,000 រៀល</label>&nbsp;&nbsp;&nbsp;&nbsp;
+									<label><input type="radio" name="decrement"> 20,000 រៀល</label>&nbsp;&nbsp;&nbsp;&nbsp;
+									<label><input type="radio" name="decrement"> ផ្សេងៗ</label> -->
+								</div>
+							</td>
+						</tr>
+						<tr style="display:none;" id="loadingDecrementTypeValue">
+							<th><div>ចំនួនទឹកប្រាក់ថយ</div></th>
+							<td><div><input type="text" value="" name="" placeholder=""​​ id="popup_decrement"></div></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- //table input popup -->
+		</div>
+		<div class="t_line">
+			<a href="javascript:" class="btn_confirm">បន្ថែម</a>
+			<a href="javascript:" class="btn_cancel">បោះបង់</a>
+		</div>
+	</div>	
+</div>
+<!-- //popup form -->
+<!-- loading.... -->
+<div style="display:none;" id="loading">
+    <img src="../img/loading.gif" alt="LAON" height="50" width="50">
+</div>
+</body>
+</html>
+

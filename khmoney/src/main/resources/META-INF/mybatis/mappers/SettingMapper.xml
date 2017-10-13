@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kh.com.loan.mappers.SettingMapper">
+	<select id="loadingListSetting" resultType="kh.com.loan.domains.Setting">
+		SELECT 
+			  id
+			, columns
+			, value
+			, rate
+			, day
+			, type
+			, sts
+			, txt
+		FROM tblrate_type
+		WHERE sts != '9'
+		ORDER BY value
+	</select>
+	
+	<select id="loadingListColumns" resultType="kh.com.loan.domains.Setting">		
+		SELECT DISTINCT 
+			  columns
+			, type
+			, day
+		FROM tblrate_type
+		WHERE sts != '9'
+		ORDER BY type asc
+	</select>
+	
+	<update id="settingEditById"  parameterType="kh.com.loan.domains.Setting">
+		UPDATE tblrate_type
+		   SET    columns=#{columns}
+		   		, value=#{value}
+		   		, rate=#{rate}
+		   		, day=#{day}
+		   		, type=#{type}
+		   		, sts=#{sts}
+		   		, txt=#{txt}
+		WHERE id = #{id}
+   </update>
+   
+   <select id="loadingSettingById" parameterType="java.lang.Integer" resultType="kh.com.loan.domains.Setting">
+   		SELECT 
+   				  id
+   				, columns
+   				, value
+   				, rate
+   				, day
+   				, type
+   				, sts
+   				, txt
+      FROM tblrate_type
+      WHERE id = #{id}
+   		
+   </select>
+   <insert id="saveNewCountAndRate" parameterType="kh.com.loan.domains.Setting">
+   		INSERT INTO tblrate_type(
+              columns
+            , value
+            , rate
+            , day
+            , type
+            , sts
+            , txt
+            )
+        VALUES (
+        		   #{columns}
+        		 , #{value}
+        		 , #{rate}
+        		 , #{day}
+        		 , #{type}
+        		 , #{sts}
+        		 , #{txt}
+        		 );
+   </insert>
+	
+</mapper>
