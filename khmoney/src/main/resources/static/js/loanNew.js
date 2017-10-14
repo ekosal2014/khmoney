@@ -111,7 +111,7 @@ function loadingSettingData(){
 function loadingSettingValue(val){
 	$.ajax({
 		type:"GET",
-		url:'/loadingSettingValue',
+		url:'/khmoney/loadingSettingValue',
 		success:function(json){
 			if (json.code == 'undefined'){
 				alert(json.message);
@@ -359,7 +359,7 @@ function loanSaveNewItem(){
 				return;
 			}
 			 alert(json.message);
-			 window.location.href = '/loan/loanNew';
+			 window.location.href = '/khmoney/loan/loanNew';
 		},error:function(json){
 			console.log(json)
 		}

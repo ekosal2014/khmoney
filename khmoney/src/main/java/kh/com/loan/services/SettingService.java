@@ -46,9 +46,11 @@ public class SettingService {
 	
      public Message settingEditById(Map map) throws KHException {
     	
+    	Validation.isBlank((String)map.get("value"),  "សូមធ្វើការបញ្ចូលចំនួនដងដែលត្រូវបង់ប្រាក់!");
+    	Validation.isBlank((String)map.get("rate"),   "សូមធ្វើការបញ្ចូលអត្រាការប្រាក់!");
 		Validation.isNumber((String)map.get("value"), "អនុញ្ញាតបញ្ចូលតែលេខប៉ុណ្ណោះ");
-		Validation.isRate((String)map.get("rate"), "ការបញ្ជូលការប្រាក់ខុសទំរងសូមផ្ទៀងផ្ទាត់ម្ដងទៀត");
-		Validation.isBlank((String)map.get("id"), "Id is not allow null");
+		Validation.isRate((String)map.get("rate"),    "ការបញ្ជូលការប្រាក់ខុសទំរងសូមផ្ទៀងផ្ទាត់ម្ដងទៀត");
+		Validation.isBlank((String)map.get("id"),     "Id is not allow null");
 	    
 		try {
 			
@@ -67,6 +69,8 @@ public class SettingService {
 		//return new Message();
 	}
     public Message saveNewCountAndRate(Map map) throws KHException {
+    	Validation.isBlank((String)map.get("value"),  "សូមធ្វើការបញ្ចូលចំនួនដងដែលត្រូវបង់ប្រាក់!");
+    	Validation.isBlank((String)map.get("rate"),   "សូមធ្វើការបញ្ចូលអត្រាការប្រាក់!");
     	Validation.isNumber((String)map.get("value"), "អនុញ្ញាតបញ្ចូលតែលេខប៉ុណ្ណោះ");
     	Validation.isNumber((String)map.get("type"),  "អនុញ្ញាតបញ្ចូលតែលេខប៉ុណ្ណោះ");
     	Validation.isNumber((String)map.get("day"),   "អនុញ្ញាតបញ្ចូលតែលេខប៉ុណ្ណោះ");
