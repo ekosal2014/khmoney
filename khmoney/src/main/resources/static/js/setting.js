@@ -89,6 +89,12 @@ function showTextBoxEditData(obj){
 	$(obj).hide();
 }
 
+function removeTagTr(obj){
+	$(obj).parents('tr').prev().find('.btn_add_1').show();
+	$(obj).parents('tr').hide();
+	
+}
+
 function saveEditCountAndRate(obj){
 	var data = {
 			value : $(obj).parents('tr').find('.div_value').find('.value').val().replace(/\ដង/g, '').trim(),
@@ -122,9 +128,9 @@ function addNewCountAndRate(obj){
 		+'<td><div  class="div_rate"><input type="text" value="" class="rate"></div></td>'
 		+'<td>'
 		+'<div>'		
-		+'<a href="javascript:" class="btn_save"   onClick="saveNewCountAndRate(this);"><span class="blind">save</span></a>'
+		+'<a href="javascript:" class="btn_save"  style="min-width:17px !important;background-color:transparent !important;"  onClick="saveNewCountAndRate(this);"><span class="blind">save</span></a>'
 		/*+'<a href="javascript:" class="btn_delete_1"><span class="blind">delete</span></a>'*/
-		+'<a href="javascript:" class="btn_delete_1"  onClick="showTextBoxEditData(this);"><span class="blind">- </span></a>'
+		+'<a href="javascript:" class="btn_delete_1"  onClick="removeTagTr(this);"><span class="blind">- </span></a>'
 		+'</div>'
 		+'</td>'
 		+'</tr>';

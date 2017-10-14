@@ -388,7 +388,7 @@ input{outline:0;}
 .tbl_input_dot a.btn_edit1{width:35px;background-image:url(../img/icon/ico_btn_edit1.png);background-repeat:no-repeat;background-position:-3px -9px;background-size:45px auto;}
 .tbl_input_dot a.btn_delete_1{background-image:url(../img/icon/ico_btn_delete1.png);background-repeat:no-repeat;background-position:0 0;background-size:20px auto;}
 .tbl_input_dot a.btn_add_1{background-image:url(../img/icon/ico_btn_add1.png);background-repeat:no-repeat;background-position:-7px -5px;background-size:35px auto;}
-.tbl_input_dot a.btn_save{background-image:url(../img/icon/Save-as.png);background-repeat:no-repeat;background-position:-7px -5px;background-size:35px auto;}
+.tbl_input_dot a.btn_save{background-image:url(../img/icon/if_download_2628460.png);background-repeat:no-repeat;background-position:7px -5px;background-size: 35px 35px;}
 
 .tbl_input_dot a.btn_edit1:hover, 
 .tbl_input_dot a.btn_delete_1:hover, 
