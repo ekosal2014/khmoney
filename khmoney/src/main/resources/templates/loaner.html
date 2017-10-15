@@ -1,26 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org"
 	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
-<head>
-<title>E-Fashion</title>
-<meta charset="utf-8">
-<meta http-equiv="Cache-Control" content="No-Cache">
-<meta http-equiv="Pragma" content="No-Cache">
-<link rel="icon" th:href="@{img/icon/loan.ico}">
-<link rel="stylesheet" href="css/reset.css">
-<link rel="stylesheet" href="css/content.css">
-</head>
+<head lang="en" th:replace="fragments/head :: head"></head>
 
 <body class="lnb_bg">
 
 <div class="wrap">
 
 	<!-- header -->
-	<div class="header">
-		<div class="f_left cboth">
-			<h1 class="logo"><a href="javascript:"><img th:src="@{img/logo/piggy-bank.png}" alt="LAON"></a></h1>
-		</div>
-	</div>
+	<div lang="en" th:replace="/header :: header"></div>
 	<!-- //header -->
 
 	<!-- Container -->
@@ -115,7 +103,7 @@
 				<div class="paging_wrap">
 					<div class="combo_wrap">
 						<div class="combo_style">
-							<select style="width:;" name="type_payment" id="num_rows">
+							<select style="width:80px;height: 27px !important;" name="type_payment" id="num_rows">
 								<option value="15">15</option>
 								<option value="30">30</option>
 								<option value="50">50</option>
@@ -148,17 +136,7 @@
 	</div>
 	<!-- //Container -->
 	
-	<!-- footer -->
-	<div class="footer" style="display:none;">
-		<!-- Copy right -->
-		<div class="copyright_wrap">
-			<div class="copyright_box">
-				<p><strong>E-Fashion</strong> Cambodia © 2017 Online Store. All Rights Reserved.</p>
-			</div>
-		</div>
-		<!-- //Copy right -->
-	</div>
-	<!-- //footer -->
+	<div lang="en" th:replace="fragments/footer :: footer"> </div>
 
 	
 </div>
@@ -167,8 +145,8 @@
 	 <script th:src="@{js/common/Common.js}"></script>
 	 <script th:src="@{js/common/pagination.js}"></script>
 	 <script th:src="@{js/loaner.js}"></script>
-<div style="display:none;" id="loading">
-    <img th:src="@{img/loading.gif}" alt="LAON" height="50" width="50">
-</div>
+	<div style="display:none;" id="loading">
+	    <img th:src="@{img/loading.gif}" alt="LAON" height="50" width="50">
+	</div>
 </body>
 </html>

@@ -1,27 +1,15 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org"
-	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
-<head>
-<title>E-Fashion</title>
-<meta charset="utf-8">
-<meta http-equiv="Cache-Control" content="No-Cache">
-<meta http-equiv="Pragma" content="No-Cache">
-<link rel="icon" th:href="@{img/icon/loan.ico}">
-<link rel="stylesheet" th:href="@{/css/reset.css}">
-<link rel="stylesheet" th:href="@{/css/content.css}">
-<link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}">
-</head>
-
+<html lang="en"
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:th="https://www.thymeleaf.org"
+	 xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	 xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head lang="en" th:replace="fragments/head :: head"></head>
 <body class="lnb_bg">
-
 <div class="wrap">
 
 	<!-- header -->
-	<div class="header">
-		<div class="f_left cboth">
-			<h1 class="logo"><a th:href="@{/}"><img th:src="@{img/logo/piggy-bank.png}" alt="LAON"></a></h1>
-		</div>
-	</div>
+	<div class="header" lang="en" th:replace="/header :: header"></div>
 	<!-- //header -->
 
 	<!-- Container -->
@@ -76,7 +64,7 @@
 				<!-- //tab -->
 				<!-- title_wrap -->
 				<div class="tit_wrap cboth">
-					<select style="width:;" name="type_payment" id="num_rows">
+					<select style="width:80px;height: 27px !important;" name="type_payment" id="num_rows">
 						<option value="15">15</option>
 						<option value="30">30</option>
 						<option value="50">50</option>
@@ -89,8 +77,8 @@
 									<input type="text" value="" name="" placeholder="" readonly="readonly"​​ id="end_date" style="margin-right:3px;width:70px;">
 								</span>							    
 						</div>
-						<div class="srch_wrap">														
-							 	<select style="width:;" name="type_payment" id="type_payment" >
+						<div class="srch_wrap" style="background-image: none !important;">														
+							 	<select style="width:;height: 27px !important;" name="type_payment" id="type_payment" >
 								</select>							
 						</div>
 						<div class="srch_wrap">
@@ -193,15 +181,7 @@
 	<!-- //Container -->
 	
 	<!-- footer -->
-	<div class="footer" style="display:none;">
-		<!-- Copy right -->
-		<div class="copyright_wrap">
-			<div class="copyright_box">
-				<p><strong>E-Fashion</strong> Cambodia © 2017 Online Store. All Rights Reserved.</p>
-			</div>
-		</div>
-		<!-- //Copy right -->
-	</div>
+	<div lang="en" th:replace="fragments/footer :: footer"> </div>
 	<!-- //footer -->
 
 	

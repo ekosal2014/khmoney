@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org"
 	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
-<head>
-<title>E-Fashion</title>
-<meta charset="utf-8">
-<meta http-equiv="Cache-Control" content="No-Cache">
-<meta http-equiv="Pragma" content="No-Cache">
-<link rel="icon" th:href="@{img/icon/loan.ico}">
-<link rel="stylesheet" th:href="@{/css/reset.css}">
-<link rel="stylesheet" th:href="@{/css/content.css}">
+<head lang="en" th:replace="fragments/head :: head"></head>
 
 </head>
 
@@ -17,11 +10,7 @@
 <div class="wrap">
 
 	<!-- header -->
-	<div class="header">
-		<div class="t_center">
-			<h1 class="t_center"><img src="#" alt="LAON"></h1>
-		</div>
-	</div>
+	<div lang="en" th:replace="/header :: header"></div>
 	<!-- //header -->
 
 	
@@ -54,15 +43,7 @@
 	<!-- //content wrap -->
 	</form>
 	<!-- footer -->
-	<div class="footer">
-		<!-- Copy right -->
-		<div class="copyright_wrap">
-			<div class="copyright_box">
-				<p><strong>E-Fashion</strong> Cambodia © 2017 Online Store. All Rights Reserved.</p>
-			</div>
-		</div>
-		<!-- //Copy right -->
-	</div>
+	<div lang="en" th:replace="fragments/footer :: footer"> </div>
 	<!-- //footer -->
 
 	

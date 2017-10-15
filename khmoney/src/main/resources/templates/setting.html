@@ -1,26 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org"
 	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
-<head>
-<title>E-Fashion</title>
-<meta charset="utf-8">
-<meta http-equiv="Cache-Control" content="No-Cache">
-<meta http-equiv="Pragma" content="No-Cache">
-<link rel="icon" th:href="@{img/icon/loan.ico}">
-<link rel="stylesheet" th:href="@{/css/reset.css}">
-<link rel="stylesheet" th:href="@{/css/content.css}">
-</head>
+<head lang="en" th:replace="fragments/head :: head"></head>
+
 
 <body class="lnb_bg">
 
 <div class="wrap">
 
 	<!-- header -->
-	<div class="header">
-		<div class="f_left cboth">
-			<h1 class="logo"><a href="javascript:"><img th:src="@{img/logo/piggy-bank.png}" alt="LAON"></a></h1>
-		</div>
-	</div>
+	<div lang="en" th:replace="/header :: header"></div>
 	<!-- //header -->
 
 	<!-- Container -->
@@ -216,15 +205,7 @@
 	<!-- //Container -->
 	
 	<!-- footer -->
-	<div class="footer" style="display:none;">
-		<!-- Copy right -->
-		<div class="copyright_wrap">
-			<div class="copyright_box">
-				<p><strong>E-Fashion</strong> Cambodia © 2017 Online Store. All Rights Reserved.</p>
-			</div>
-		</div>
-		<!-- //Copy right -->
-	</div>
+	<div lang="en" th:replace="fragments/footer :: footer"> </div>
 	<!-- //footer -->
 
 	

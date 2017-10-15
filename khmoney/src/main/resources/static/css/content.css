@@ -430,3 +430,35 @@ input{outline:0;}
 #num_rows{padding:2px 2px;min-width:50px;line-height:25px;border:1px solid #ccc;}
 #num_rows option{font-size:12px;font-family:"Khmer OS Content", "Khmer OS Battambang", "Khmer OS Siemreap", "Khmer OS System";}
 
+
+
+
+.topfix {
+	    width:100%;
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    z-index: 99999;
+	    border-bottom: 1px solid #fff;
+	    display: block;
+	    margin: 0;
+	    padding: 0 25px 0px;
+	    border-bottom: 2px solid #2E4B6A;
+        background-color: #2E4B6A;
+	    box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+	}
+	.topfix .tit_wrap {
+	     border-bottom:none;
+   }
+   .topfix .tit_h4 {
+	     border-bottom:none;
+	     color:white !important;
+   }
+    .topfix .tit_h4 h4{
+	     color:white !important;
+   }
+   .topfix .right_box label{
+	     color:white !important;
+   }

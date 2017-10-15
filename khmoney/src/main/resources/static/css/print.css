@@ -479,5 +479,7 @@ a:hover,a:active{text-decoration:none;color:#555;}
 /* IE10 input type auto x delete */
 input[type=text]::-ms-clear,input[type=file]::-ms-clear{display:none;}
 .fwn{font-weight:normal !important;}
-
+#type_payment{
+	display:none;
+}
 }
