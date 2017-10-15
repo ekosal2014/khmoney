@@ -10,7 +10,11 @@
 <div class="wrap">
 
 	<!-- header -->
-	<div lang="en" th:replace="/header :: header_main"></div>
+	<div class="header"  th:fragment="header">
+		<div class="f_left cboth">
+			<h1 class="logo"><a th:href="@{/}"><img th:src="@{../img/logo/piggy-bank.png}" alt="LAON"></a></h1>
+		</div>
+	</div>
 	<!-- //header -->
 
 	

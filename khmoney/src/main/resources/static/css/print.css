@@ -8,7 +8,7 @@
 .grid{border:1px solid #ccc;}
 
 /* wrap */
-.wrap{margin:0;padding:0;width:1000px;}
+.wrap{margin:0;padding:0;width:900px;}
 
 /* header */
 .header{display:none;margin:0;padding:7px 0;height:30px;border-bottom:2px solid #0C51F4;/*background-color:#0C51F4;*/}

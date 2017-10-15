@@ -28,19 +28,6 @@ public class KHSecurityConfiguration extends WebSecurityConfigurerAdapter{
 	@Autowired
 	private UserDetailsService userDetailsService;
 	
-	/*@Autowired
-	public KHSecurityConfiguration(
-			@Qualifier("customUserDetailsService")
-			UserDetailsService userDetailsService,
-			@Qualifier("ajaxAuthenticationSuccessHandler")
-			AuthenticationSuccessHandler ajaxAuthenticationSuccessHandler,
-			@Qualifier("ajaxAuthenticationFailureHandler")
-			AuthenticationFailureHandler ajaxAuthenticationFailureHandler
-			) {
-		//this.userDetailsService = userDetailsService;
-		this.ajaxAuthenticationSuccessHandler = ajaxAuthenticationSuccessHandler;
-		this.ajaxAuthenticationFailureHandler = ajaxAuthenticationFailureHandler;
-	}*/
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
