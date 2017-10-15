@@ -405,7 +405,6 @@ input{outline:0;}
 /* add */
 .point_text{display:block;padding:3px 17px;font-family:"Khmer OS Battambang","Khmer OS Bokor", "Khmer OS Content", "Khmer OS Siemreap", "Khmer OS System";color:#222;background-image:url(../img/icon/ico_point_text.png);background-repeat:no-repeat;background-position:0 5px;background-size:20px auto;}
 
-@charset "utf-8";
 
 *{margin:0;padding:0;}
 header,nav,section,article,aside,footer,hgroup,menu,canvas,figcaption,figure{display:block;}
@@ -479,7 +478,5 @@ a:hover,a:active{text-decoration:none;color:#555;}
 /* IE10 input type auto x delete */
 input[type=text]::-ms-clear,input[type=file]::-ms-clear{display:none;}
 .fwn{font-weight:normal !important;}
-#type_payment{
-	display:none;
-}
+#type_payment{display:none !important;}
 }
